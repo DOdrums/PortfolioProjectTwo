@@ -1,0 +1,20 @@
+body {
+    background-color: white;
+    font-family: "Raleway", sans-serif;
+}
+
+#text-box {
+    background-color: blue;
+    width: 80%;
+    max-width: 1000px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#keyboard {
+    background-color: yellow;
+    width: 89%;
+    max-width: 1400px;
+    height: 600px;
+    margin: 30px auto;
+}
