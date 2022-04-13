@@ -18,3 +18,23 @@ body {
     height: 600px;
     margin: 30px auto;
 }
+
+#left-side {
+    width: 47%;
+    height: 83%;
+    float: left;
+    margin-top: 20px;
+
+    background-color: black;
+    clip-path: polygon(100% 0, 100% 60%, 55% 100%, 0 100%, 0 0%);
+}
+
+#right-side {
+    width: 47%;
+    height: 83%;
+    float: right;
+    margin-top: 20px;
+
+    background-color: black;
+    clip-path: polygon(100% 0, 101% 100%, 45% 102%, 0 60%, 0 0%);
+}
