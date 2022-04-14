@@ -30,11 +30,11 @@ body {
 }
 
 #right-side {
-    width: 47%;
-    height: 83%;
+    width: 39%;
+    height: 80%;
     float: right;
     margin-top: 20px;
 
     background-color: black;
-    clip-path: polygon(100% 0, 101% 100%, 45% 102%, 0 60%, 0 0%);
+    clip-path: polygon(100% 0, 100% 100%, 47% 100%, 0 57%, 0 0%);
 }
