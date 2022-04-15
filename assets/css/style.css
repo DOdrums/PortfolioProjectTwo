@@ -20,8 +20,8 @@ body {
 }
 
 #left-side {
-    width: 37%;
-    height: 80%;
+    width: 507px;
+    height: 480px;
     float: left;
     margin-top: 20px;
 
@@ -30,23 +30,32 @@ body {
 }
 
 #right-side {
-    width: 39%;
-    height: 80%;
+    width: 507px;
+    height: 480px;
     float: right;
     margin-top: 20px;
 
     background-color: black;
-    clip-path: polygon(100% 0, 100% 100%, 47% 100%, 0 57%, 0 0%);
+    clip-path: polygon(100% 0, 100% 100%, 42% 100%, 0 58%, 0 0%);
 }
 
 .lrow {
     width: 92%;
     height: 90px;
     margin: -5px 0 0 19px;
-    background-color: white;  
 }
 
 #lrow-5{
+    margin-top: 32px;
+}
+
+.rrow {
+    width: 92%;
+    height: 90px;
+    margin: -5px 0 0 19px;
+}
+
+#rrow-5 {
     margin-top: 32px;
 }
 
@@ -57,4 +66,9 @@ body {
     background-color: orange;
     display: inline-block;
     border-radius: 13%;
+}
+
+.rrow .key {
+    float: right;
+    margin-left: 5px;
 }
