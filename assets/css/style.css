@@ -60,6 +60,10 @@ body {
 }
 
 .key {
+    font-size: 30px;
+    line-height: 51px;
+    text-align: center;
+    
     width: 59px;
     height: 59px;
     margin: 8px 1px;
