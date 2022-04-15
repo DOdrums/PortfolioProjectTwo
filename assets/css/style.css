@@ -40,8 +40,17 @@ body {
 }
 
 .lrow {
-    width: 90%;
-    height: 10px;
+    width: 92%;
+    height: 90px;
     margin: 5px auto;
     background-color: white;  
+}
+
+.key {
+    width: 72px;
+    height: 72px;
+    margin: 8px 3px;
+    background-color: orange;
+    display: inline-block;
+    border-radius: 13%;
 }
