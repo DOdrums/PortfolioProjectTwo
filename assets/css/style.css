@@ -20,13 +20,13 @@ body {
 }
 
 #left-side {
-    width: 39%;
+    width: 37%;
     height: 80%;
     float: left;
     margin-top: 20px;
 
     background-color: black;
-    clip-path: polygon(100% 0, 100% 57%, 53% 100%, 0 100%, 0 0%);
+    clip-path: polygon(100% 0, 100% 57%, 58% 100%, 0 100%, 0 0%);
 }
 
 #right-side {
@@ -42,14 +42,18 @@ body {
 .lrow {
     width: 92%;
     height: 90px;
-    margin: 5px auto;
+    margin: -5px 0 0 19px;
     background-color: white;  
 }
 
+#lrow-5{
+    margin-top: 32px;
+}
+
 .key {
-    width: 72px;
-    height: 72px;
-    margin: 8px 3px;
+    width: 59px;
+    height: 59px;
+    margin: 8px 1px;
     background-color: orange;
     display: inline-block;
     border-radius: 13%;
