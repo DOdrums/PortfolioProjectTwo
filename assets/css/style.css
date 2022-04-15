@@ -2,7 +2,7 @@ body {
     background-color: white;
     font-family: "Raleway", sans-serif;
 }
-
+/* styling of text box */
 #text-box {
     background-color: blue;
     width: 80%;
@@ -10,7 +10,7 @@ body {
     height: 300px;
     margin: 0 auto;
 }
-
+/* styling of keyboard */
 #keyboard {
     background-color: yellow;
     width: 89%;
@@ -20,13 +20,13 @@ body {
 }
 
 #left-side {
-    width: 47%;
-    height: 83%;
+    width: 39%;
+    height: 80%;
     float: left;
     margin-top: 20px;
 
     background-color: black;
-    clip-path: polygon(100% 0, 100% 60%, 55% 100%, 0 100%, 0 0%);
+    clip-path: polygon(100% 0, 100% 57%, 53% 100%, 0 100%, 0 0%);
 }
 
 #right-side {
@@ -37,4 +37,11 @@ body {
 
     background-color: black;
     clip-path: polygon(100% 0, 100% 100%, 47% 100%, 0 57%, 0 0%);
+}
+
+.lrow {
+    width: 90%;
+    height: 10px;
+    margin: 5px auto;
+    background-color: white;  
 }
