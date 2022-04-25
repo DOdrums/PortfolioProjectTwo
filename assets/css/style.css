@@ -1,14 +1,15 @@
 body {
     background-color: white;
-    font-family: "Raleway", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 /* styling of text box */
 #text-box {
-    background-color: blue;
-    width: 80%;
+    width: 100%;
     max-width: 1000px;
     height: 300px;
     margin: 0 auto;
+
+    font-size: 200%;
 }
 /* styling of keyboard */
 #keyboard {
