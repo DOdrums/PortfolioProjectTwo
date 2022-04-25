@@ -1,7 +1,9 @@
 body {
     background-color: white;
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
 }
+
 /* styling of text box */
 #text-box {
     width: 100%;
@@ -59,8 +61,10 @@ body {
 
 .key {
     font-size: 30px;
+    font-weight: 500;
     line-height: 51px;
     text-align: center;
+    color: rgb(81 194 255);
     
     width: 58px;
     height: 58px;
