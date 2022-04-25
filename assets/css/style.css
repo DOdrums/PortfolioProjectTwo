@@ -5,14 +5,37 @@ body {
 }
 
 /* styling of text box */
-#text-box {
-    width: 100%;
+#typing-box {
+    float: left;
+    display: inline;
+    width: 49%;
     max-width: 1000px;
     height: 300px;
     margin: 0 auto;
+}
 
+#enter-text-box {
+    margin-left: 17%;
+    padding: 32px 0 0 0;
+    width: 85%;
+    height: 272px;
+    font-size: 200%;
+    font-family: 'Inter', sans-serif;
+}
+#text-box {
+    border: 1px solid gray;
+    border-radius: 3px;
+    float: right;
+    display: inline;
+    width: 42%;
+    max-width: 1000px;
+    height: 304px;
+    margin-right: 7%;
+
+    font-family: 'Inter', sans-serif;
     font-size: 200%;
 }
+
 /* styling of keyboard */
 #keyboard {
     width: 89%;
