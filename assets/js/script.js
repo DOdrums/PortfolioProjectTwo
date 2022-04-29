@@ -1,15 +1,20 @@
 document.addEventListener("keydown", function(event) {
     if (event.key === event.key ) {
+        if (event.key !== "Shift" && event.key !== " ") {
+            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
+        } else {
+            // don't do anything
+        }
         typedLetters.push(event.key);
         console.log(typedLetters);
         compareText();
-        document.getElementById(event.key + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
     }
 })
 
 document.addEventListener("keyup", function(event) {
     if (event.key === event.key) {
-        document.getElementById(event.key + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+        if (event.key !== "Shift" && event.key !== " ")
+        document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
     }
 })
 
@@ -31,7 +36,7 @@ function compareText() {
 }
 
 typedLetters = [];
-typeText = ['Shift', 'T', 'y', 'p', 'e'];
+typeText = ['T', 'y', 'p', 'e'];
 
 // nocode:
     `list gets appended with each keystroke, after which a function is called to compare said list to list of letters in text that has to be typed
