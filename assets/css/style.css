@@ -36,6 +36,16 @@ body {
     font-size: 200%;
 }
 
+/* styling of right or wrong letters in text to be typed box */
+
+.wrong {
+    background-color: red;
+}
+
+.right {
+    background-color: green;
+}
+
 /* styling of keyboard */
 #keyboard {
     width: 89%;

@@ -27,8 +27,11 @@ function compareText() {
         if (typedLetters[typedLetters.length - 1] === typeText[typedLetters.length - 1]) {
             console.log("Good Job!");
             
-            text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1)
-            console.log(text)
+            text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
+            console.log(text);
+            newText = `<span class="right">${text}</span>`;
+            console.log(newText);
+            document.getElementById("text-box").innerHTML.replace(typedLetters[typedLetters.length - 1], "ja")
         } else {
             console.log("typeText");
         } 
