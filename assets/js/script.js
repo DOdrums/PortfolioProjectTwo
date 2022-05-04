@@ -22,22 +22,19 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
-let newText = ""
-
 function compareText() {
         if (typedLetters[typedLetters.length - 1] === typeText[typedLetters.length - 1]) {
             console.log("Good Job!");
             
-            text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
-            console.log(text);
-            newText += `<span>${text}</span>`;
-            // console.log(newText);
-            let letterColor = document.getElementById("text").children[typedLetters.length - 1];
-            letterColor.className = "right"
+            // text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
+            // console.log(text);
+            let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
+            letterCorrect.className = "right"
 
             
         } else {
-            console.log("typeText");
+            let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
+            letterWrong.className = "wrong";
         } 
 }
 
