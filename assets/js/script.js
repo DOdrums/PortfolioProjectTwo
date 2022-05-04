@@ -22,6 +22,7 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
+let newText = ""
 
 function compareText() {
         if (typedLetters[typedLetters.length - 1] === typeText[typedLetters.length - 1]) {
@@ -29,9 +30,12 @@ function compareText() {
             
             text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
             console.log(text);
-            newText = `<span class="right">${text}</span>`;
-            console.log(newText);
-            document.getElementById("text-box").innerHTML.replace(typedLetters[typedLetters.length - 1], "ja")
+            newText += `<span>${text}</span>`;
+            // console.log(newText);
+            let letterColor = document.getElementById("text").children[typedLetters.length - 1];
+            letterColor.className = "right"
+
+            
         } else {
             console.log("typeText");
         } 

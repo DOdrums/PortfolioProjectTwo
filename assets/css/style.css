@@ -39,11 +39,11 @@ body {
 /* styling of right or wrong letters in text to be typed box */
 
 .wrong {
-    background-color: red;
+    color: red;
 }
 
 .right {
-    background-color: green;
+    color: green;
 }
 
 /* styling of keyboard */
