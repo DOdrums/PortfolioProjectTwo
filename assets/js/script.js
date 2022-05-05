@@ -9,6 +9,7 @@ document.addEventListener("keydown", function(event) {
         } else if (event.key === "Backspace") {
             typedLetters.pop()
             console.log(typedLetters)
+            resetLetter()
         } else {
             document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
             typedLetters.push(event.key);
@@ -32,13 +33,16 @@ function compareText() {
             // text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
             // console.log(text);
             let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
-            letterCorrect.className = "right"
-
-            
+            letterCorrect.className = "right"  
         } else {
             let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
             letterWrong.className = "wrong";
         } 
+}
+
+function resetLetter() {
+            let letter = document.getElementById("text").children[typedLetters.length];
+            letter.className = "";
 }
 
 typedLetters = [];
