@@ -49,17 +49,7 @@ typedLetters = [];
 typeText = ['T', 'y', 'p', 'e', ' ', 't', 'h', 'i', 's', ' ', 't', 'e', 'x', 't', ' ', 'a', 's', ' ', 'f', 'a', 's', 't', ' ', 'a', 's', ' ', 'y', 'o', 'u', ' ', 'c', 'a', 'n', '.'];
 
 // nocode:
-    // `list gets appended with each keystroke, after which a function is called to compare said list to list of letters in text that has to be typed
-
-    // If backspace is hit, pop last item off of list, so text can be reasessed (option)
+    // `Make spacebar red as well if not hit (probably with background color.)
 
     // When restart button is hit, text disappears and typedLetters list is reset.
-    // `
-
-// Logic first listener:
-
-    // ` If shift do nothing
-    // If space or other key, call function
-    // If key but not space or shift, call color change
-
     // `
