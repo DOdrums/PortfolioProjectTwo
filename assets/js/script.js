@@ -6,6 +6,9 @@ document.addEventListener("keydown", function(event) {
             typedLetters.push(event.key);
             console.log(typedLetters);
             compareText();
+        } else if (event.key === "Backspace") {
+            typedLetters.pop()
+            console.log(typedLetters)
         } else {
             document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
             typedLetters.push(event.key);
@@ -17,7 +20,7 @@ document.addEventListener("keydown", function(event) {
 
 document.addEventListener("keyup", function(event) {
     if (event.key === event.key) {
-        if (event.key !== "Shift" && event.key !== " ")
+        if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace")
         document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
     }
 })
