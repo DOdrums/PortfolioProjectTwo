@@ -26,6 +26,12 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
+let codeOption = document.getElementById("code-option")
+codeOption.addEventListener("click", function() {
+    this.focus()
+    console.log("Yeah!")
+})
+
 function compareText() {
         if (typedLetters[typedLetters.length - 1] === typeText[typedLetters.length - 1]) {
             console.log("Good Job!");
@@ -46,7 +52,7 @@ function resetLetter() {
 }
 
 typedLetters = [];
-typeText = ['T', 'y', 'p', 'e', ' ', 't', 'h', 'i', 's', ' ', 't', 'e', 'x', 't', ' ', 'a', 's', ' ', 'f', 'a', 's', 't', ' ', 'a', 's', ' ', 'y', 'o', 'u', ' ', 'c', 'a', 'n', '.'];
+typeText = ['S', 'e', 'l', 'e', 'c', 't', ' ', 'a', 'n', ' ', 'o', 'p', 't', 'i', 'o', 'n',':', ' ', 'T', 'e', 'x', 't', ' ', 'o', 'r', ' ', 'C', 'o', 'd', 'e', '?']
 
 // nocode:
     // `Make spacebar red as well if not hit (probably with background color.)
