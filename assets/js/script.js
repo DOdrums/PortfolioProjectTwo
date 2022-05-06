@@ -26,11 +26,16 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
-let codeOption = document.getElementById("code-option")
+let codeOptionMobile = document.getElementById("code-option-mobile")
+let textOptionMobile = document.getElementById("text-option-mobile")
 let inputField = document.getElementById("input-trigger")
-codeOption.addEventListener("click", function() {
+codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
     console.log("Yeah2!")
+})
+textOptionMobile.addEventListener("click", function() {
+    inputField.focus()
+    console.log("Yeah3")
 })
 
 function compareText() {

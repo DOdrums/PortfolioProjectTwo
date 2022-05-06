@@ -67,6 +67,14 @@ body {
     z-index: -2;
 }
 
+#text-option-mobile {
+    display: none;
+}
+
+#code-option-mobile {
+    display: none;
+}
+
 /* styling of right or wrong letters in text to be typed box */
 
 .wrong {
@@ -183,5 +191,32 @@ body {
     #text-box {
         width: 92vw;
         font-size: 128%;
+    }
+    #text-option {
+        display: none;
+    }
+    #code-option {
+        display: none;
+    }
+    #text-option-mobile {
+        text-align: center;
+        display: block;
+        width: 67%;
+        height: 53px;
+        margin: 53px auto 0 auto;
+        background-color: grey;
+    }
+    
+    #code-option-mobile {
+        text-align: center;
+        display: block;
+        width: 67%;
+        height: 53px;
+        margin: 53px auto 0 auto;
+        background-color: grey;
+    }
+
+    #code-option-mobile p, #text-option-mobile p {
+        padding: 15px;
     }
 }
