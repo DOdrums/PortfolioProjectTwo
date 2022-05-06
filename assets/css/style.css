@@ -60,7 +60,7 @@ body {
 
 #input-trigger {
     position: absolute;
-    top: 16%;
+    top: -10%;
     left: 45%;
 
     caret-color: transparent;
