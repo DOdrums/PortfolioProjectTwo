@@ -45,6 +45,7 @@ body {
 }
 
 #text-box {
+    background-color: white;
     border: 1px solid gray;
     border-radius: 3px;
     width: 52vw;
@@ -59,8 +60,9 @@ body {
 
 #input-trigger {
     position: absolute;
-    top: 28%;
-    left: 28%;
+    top: 16%;
+    left: 45%;
+    z-index: -2;
 }
 
 /* styling of right or wrong letters in text to be typed box */
