@@ -25,8 +25,8 @@ body {
 #text-box {
     border: 1px solid gray;
     border-radius: 3px;
-    width: 42%;
-    max-width: 1000px;
+    width: 52vw;
+    max-width: 671px;
     height: 304px;
     margin: 0 auto;
 
@@ -48,7 +48,7 @@ body {
 }
 
 /* styling of keyboard */
-#keyboard {
+.keyboard {
     width: 89%;
     max-width: 1400px;
     height: 600px;
@@ -126,5 +126,30 @@ body {
     }
     .lrow .key {
         margin-right: 0.3vw;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #text-box {
+        width: 52vw;
+        font-size: 175%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    #text-box {
+        width: 62vw;
+        height: 250px;
+        font-size: 150%;
+    }
+}  
+
+@media (orientation:portrait) {
+    #hide {
+        display: none;
+    }
+    #text-box {
+        width: 92vw;
+        font-size: 128%;
     }
 }
