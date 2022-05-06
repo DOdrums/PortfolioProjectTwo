@@ -27,8 +27,9 @@ document.addEventListener("keyup", function(event) {
 })
 
 let codeOption = document.getElementById("code-option")
+let textField = document.getElementById("text-box")
 codeOption.addEventListener("click", function() {
-    this.focus()
+    textField.focus()
     console.log("Yeah!")
 })
 
