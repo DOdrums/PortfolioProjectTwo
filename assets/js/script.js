@@ -27,10 +27,10 @@ document.addEventListener("keyup", function(event) {
 })
 
 let codeOption = document.getElementById("code-option")
-let textField = document.getElementById("text-box")
+let inputField = document.getElementById("input-trigger")
 codeOption.addEventListener("click", function() {
-    textField.focus()
-    console.log("Yeah!")
+    inputField.focus()
+    console.log("Yeah2!")
 })
 
 function compareText() {

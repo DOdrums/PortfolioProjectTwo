@@ -57,6 +57,12 @@ body {
     text-align: center;
 }
 
+#input-trigger {
+    position: absolute;
+    top: 28%;
+    left: 28%;
+}
+
 /* styling of right or wrong letters in text to be typed box */
 
 .wrong {
