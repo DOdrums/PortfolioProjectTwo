@@ -2,7 +2,7 @@ document.addEventListener("keydown", function(event) {
     if (event.key === event.key ) {
         if (event.key === "Shift") {
             // do nothing
-        } else if (event.key === " ") {
+        } else if (symbols.includes(event.key)) {
             typedLetters.push(event.key);
             console.log(typedLetters);
             compareText();
@@ -21,7 +21,7 @@ document.addEventListener("keydown", function(event) {
 
 document.addEventListener("keyup", function(event) {
     if (event.key === event.key) {
-        if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace")
+        if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
         document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
     }
 })
@@ -84,10 +84,9 @@ function deleteButtons(text) {
 }
 
 let typedLetters = [];
+let  symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"]
 let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
-let code = `<script>
-console.log('Hello, World!')
-</script>`
+let code = `<script>console.log('Hello, World!')</script>`
 let checkText = ""
 
 // nocode:
