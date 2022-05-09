@@ -1,35 +1,3 @@
-/**
- * Listens for keys after user selects code or text option.
- * Calls appropriate functions for program to run.
- */
-function listenForKeys() {
-    document.addEventListener("keydown", function(event) {
-        if (event.key === event.key ) {
-            if (event.key === "Shift") {
-                // do nothing
-            } else if (symbols.includes(event.key)) {
-                typedLetters.push(event.key);
-                compareText();
-            } else if (event.key === "Backspace") {
-                typedLetters.pop()
-                resetLetter()
-            } else {
-                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
-                typedLetters.push(event.key);
-                compareText();
-            }
-        }
-    })
-    document.addEventListener("keyup", function(event) {
-        if (event.key === event.key) {
-            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
-            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
-        }
-    })
-}
-
-
-
 let codeOption = document.getElementById("code-option")
 let textOption = document.getElementById("text-option")
 let textOptionMobile = document.getElementById("text-option-mobile")
@@ -59,8 +27,40 @@ codeOptionMobile.addEventListener("click", function() {
     listenForKeys()
 })
 
+/**
+ * Listens for keys after user selects code or text option.
+ * Calls appropriate functions for program to run.
+ */
+function listenForKeys() {
+    document.addEventListener("keydown", function(event) {
+        if (event.key === event.key) {
+            if (event.key === event.key && typedLetters < 1) {
+                startTime = new Date()
+            } if (event.key === "Shift") {
+                // do nothing
+            } else if (symbols.includes(event.key)) {
+                typedLetters.push(event.key);
+                compareText();
+                calculateWPM();
+            } else if (event.key === "Backspace") {
+                typedLetters.pop()
+                resetLetter()
+            } else {
+                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
+                typedLetters.push(event.key);
+                compareText();
+            }
+        }
+    })
+    document.addEventListener("keyup", function(event) {
+        if (event.key === event.key) {
+            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
+            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+        }
+    })
+}
 
-
+let startTime;
 
 /**
  * Compares text typed by user to text that needs to be typed.
@@ -84,12 +84,33 @@ function compareText() {
         } 
 }
 
+// function calculateTime(time, count) {
+//     let endTime = new Date()
+//     let timeDiff = endTime.getTime() - time.getTime();
+//     console.log(timeDiff / 1000);
+    
+// }
+
+function calculateWPM(time) {
+    let count = {};
+    for (let element of typedLetters) {
+        if (count[element]) {
+            count[element] += 1;
+        } else {
+            count[element] = 1;
+        }
+    }
+    // calculateTime(startTime, count)
+    let endTime = new Date()
+    let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
+    wpm = Math.floor(60 / timeDiff * count[" "]);
+    console.log(wpm)
+}
 
 function calculateAccuracy() {
     accuracy = 100 - (errors / correct) * 100 
     return accuracy.toFixed(1)
 }
-
 
 /**
  * Reverts color of letter back to black after backspace is hit.
@@ -98,7 +119,6 @@ function resetLetter() {
             let letter = document.getElementById("text").children[typedLetters.length];
             letter.className = "";
 }
-
 
 /**
  * calls deleteButtons function and enters text or code
@@ -114,7 +134,6 @@ function typeText(textOrCode) {
     oldText.innerHTML = newText;
     checkText = textOrCode
 }
-
 
 /**
  * Deletes buttons and placeholder text from html
