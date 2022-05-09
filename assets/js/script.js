@@ -30,13 +30,20 @@ function listenForKeys() {
 
 
 
-let codeOptionMobile = document.getElementById("code-option")
-let textOptionMobile = document.getElementById("text-option")
+let codeOption = document.getElementById("code-option")
+let textOption = document.getElementById("text-option")
+let textOptionMobile = document.getElementById("text-option-mobile")
+let codeOptionMobile = document.getElementById("code-option-mobile")
 let inputField = document.getElementById("input-trigger")
 
-codeOptionMobile.addEventListener("click", function() {
+textOption.addEventListener("click", function() {
     inputField.focus()
+    typeText(text)
+    listenForKeys()
+})
+codeOption.addEventListener("click", function() {
     typeText(code)
+    inputField.focus()
     listenForKeys()
 })
 textOptionMobile.addEventListener("click", function() {
@@ -44,6 +51,13 @@ textOptionMobile.addEventListener("click", function() {
     typeText(text)
     listenForKeys()
 })
+codeOptionMobile.addEventListener("click", function() {
+    inputField.focus()
+    typeText(code)
+    listenForKeys()
+})
+
+
 
 
 /**
