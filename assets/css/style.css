@@ -43,7 +43,19 @@ body {
 }
 
 #typing-data {
-    font-size: 20px;
+    font-size: 19px;
+}
+
+#wpm {
+    position: absolute;
+    bottom: -16px;
+    right: 601px; 
+}
+
+#wpm-count {
+    position: absolute;
+    bottom: 0px;
+    left: 59px;
 }
 
 #accuracy {

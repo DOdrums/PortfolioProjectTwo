@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, user-scalable=0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, user-scalable=0">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Moonlander Typing Tutor</title>
 </head>
+
 <body>
     <div id="text-box">
         <p id="text">Select an option: Text or Code?</p>
-        <div id="text-option"><p>Text</p></div>
-        <div id="code-option"><p>Code</p></div>
-        <div id="typing-data"><span id="accuracy"><p>accuracy:<p id="accuracy-percentage">%</p></span>
-            <span id="errors">
-            <p>errors:</p><span>
-                <p id="error-count">0</p>
+        <div id="text-option">
+            <p>Text</p>
+        </div>
+        <div id="code-option">
+            <p>Code</p>
+        </div>
+        <div id="typing-data">
+            <span id="wpm">
+                <p>WPM:</p><p id="wpm-count">0</p>
             </span>
-        </span></div>
+            <span id="accuracy">
+                <p>accuracy:</p><p id="accuracy-percentage">%</p>
+            </span>
+            <span id="errors">
+                <p>errors:</p><span>
+                    <p id="error-count">0</p>
+                </span>
+            </span></div>
     </div>
     <input type="text" id="input-trigger" autocapitalize="off">
-    <div id="text-option-mobile"><p>Text</p></div>
-    <div id="code-option-mobile"><p>Code</p></div>
+    <div id="text-option-mobile">
+        <p>Text</p>
+    </div>
+    <div id="code-option-mobile">
+        <p>Code</p>
+    </div>
     <div class="keyboard" id="hide">
         <div id="left-side">
             <div class="lrow" id="lrow-5">
@@ -70,7 +89,7 @@
                 <span class="key">-</span>
                 <span class="key">-</span>
                 <span class="key">-</span>
-            </div>   
+            </div>
         </div>
         <div id="right-side">
             <div class="rrow" id="rrow-5">
@@ -114,9 +133,10 @@
                 <span class="key" id="[-key">[</span>
                 <span class="key" id="}-key">}</span>
                 <span class="key" id="{-key">{</span>
-            </div> 
+            </div>
         </div>
     </div>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
