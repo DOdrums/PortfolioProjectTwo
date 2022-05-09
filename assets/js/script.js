@@ -108,6 +108,8 @@ function deleteButtons(text) {
     text.innerHTML = "";
     document.getElementById("code-option").style.display = "none";
     document.getElementById("text-option").style.display = "none";
+    document.getElementById("code-option-mobile").style.display = "none";
+    document.getElementById("text-option-mobile").style.display = "none";
 }
 
 let typedLetters = [];
