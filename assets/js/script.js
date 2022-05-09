@@ -15,6 +15,7 @@ codeOption.addEventListener("click", function() {
     typeText(code)
     inputField.focus()
     listenForKeys()
+    changeTimer()
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
@@ -84,11 +85,16 @@ function compareText() {
         } 
 }
 
-// function calculateTime(time, count) {
+function changeTimer() {
+    document.getElementById("wpm").id = "hideText"
+    document.getElementById("wpm-count").id = "hideText"
+    document.getElementById("time").style.display = "inline-block"
+}
+
+// function timer() {
 //     let endTime = new Date()
-//     let timeDiff = endTime.getTime() - time.getTime();
-//     console.log(timeDiff / 1000);
-    
+//     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
+//     document.getElementById("wpm-count").innerHTML = Math.floor(timeDiff)
 // }
 
 function calculateWPM(time) {
@@ -104,7 +110,7 @@ function calculateWPM(time) {
     let endTime = new Date()
     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
     wpm = Math.floor(60 / timeDiff * count[" "]);
-    console.log(wpm)
+    document.getElementById("wpm-count").innerHTML = wpm
 }
 
 function calculateAccuracy() {

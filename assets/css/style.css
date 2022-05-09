@@ -4,6 +4,10 @@ body {
     font-weight: 400;
 }
 
+#hideText {
+    display: none;
+}
+
 #text-box {
     position: relative;
     background-color: white;
@@ -44,6 +48,19 @@ body {
 
 #typing-data {
     font-size: 19px;
+}
+
+#time {
+    display: none;
+    position: absolute;
+    bottom: -16px;
+    right: 601px; 
+}
+
+#time-count {
+    position: absolute;
+    bottom: 0px;
+    left: 59px;
 }
 
 #wpm {
