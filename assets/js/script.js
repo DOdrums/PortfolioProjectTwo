@@ -39,7 +39,7 @@ textOptionMobile.addEventListener("click", function() {
 })
 
 function compareText() {
-        if (typedLetters[typedLetters.length - 1] === text[typedLetters.length - 1]) {
+        if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
             console.log("Good Job!");
             
             // text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
@@ -70,6 +70,7 @@ function typeText(textOrCode) {
         newText += `<span>${textOrCode[letter]}</span>`;
     }
     oldText.innerHTML = newText;
+    checkText = textOrCode
 }
 
 
@@ -82,11 +83,12 @@ function deleteButtons(text) {
     document.getElementById("text-option").style.display = "none";
 }
 
-typedLetters = [];
-text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! It's not convenient to have to go back far in your text to fix mistakes. This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
-code = `<script>
+let typedLetters = [];
+let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
+let code = `<script>
 console.log('Hello, World!')
 </script>`
+let checkText = ""
 
 // nocode:
     // `Make spacebar red as well if not hit (probably with background color.)
