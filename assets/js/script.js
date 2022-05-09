@@ -72,6 +72,8 @@ function compareText() {
         } else {
             let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
             letterWrong.className = "wrong";
+            errors += 1
+            document.getElementById("error-count").innerHTML = errors
         } 
 }
 
@@ -112,6 +114,7 @@ function deleteButtons(text) {
     document.getElementById("text-option-mobile").style.display = "none";
 }
 
+let errors = 0;
 let typedLetters = [];
 let  symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"]
 let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
