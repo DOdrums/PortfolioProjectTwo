@@ -4,24 +4,21 @@ body {
     font-weight: 400;
 }
 
-/* styling of text box */
-/* #typing-box {
-    float: left;
-    display: inline;
-    width: 49%;
-    max-width: 1000px;
-    height: 300px;
+#text-box {
+    position: relative;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+    width: 52vw;
+    max-width: 671px;
+    height: 304px;
     margin: 0 auto;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 200%;
+    text-align: center;
 }
 
-#enter-text-box {
-    margin-left: 17%;
-    padding: 32px 0 0 0;
-    width: 85%;
-    height: 272px;
-    font-size: 200%;
-    font-family: 'Inter', sans-serif;
-} */
 #text-option {
     width: 30%;
     height: 30%;
@@ -40,22 +37,22 @@ body {
     background-color: lightgrey;
 }
 
-#code-option:hover, #text-option:hover {
-    background-color: grey;
+#errors {
+    position: absolute;
+    bottom: -16px;
+    right: 41px;
+    font-size: 74%;
 }
 
-#text-box {
-    background-color: white;
-    border: 1px solid gray;
-    border-radius: 3px;
-    width: 52vw;
-    max-width: 671px;
-    height: 304px;
-    margin: 0 auto;
+#error-count {
+    position: absolute;
+    bottom: 0;
+    right: -24px;
+    color: red;
+}
 
-    font-family: 'Inter', sans-serif;
-    font-size: 200%;
-    text-align: center;
+#code-option:hover, #text-option:hover {
+    background-color: grey;
 }
 
 #input-trigger {
