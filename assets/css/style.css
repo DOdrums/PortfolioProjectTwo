@@ -19,6 +19,11 @@ body {
     text-align: center;
 }
 
+#text {
+    position: relative;
+    top: -19px;
+}
+
 #text-option {
     width: 30%;
     height: 30%;
@@ -50,7 +55,7 @@ body {
 #accuracy-percentage {
     position: absolute;
     bottom: 0;
-    right: -23px;
+    left: 97px;
 }
 
 #errors {

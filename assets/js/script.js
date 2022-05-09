@@ -73,20 +73,21 @@ function compareText() {
             letterCorrect.className = "right"
             correct += 1
             percentage = calculateAccuracy()
-            document.getElementById("accuracy-percentage").innerHTML = percentage
+            document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
         } else {
             let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
             letterWrong.className = "wrong";
             errors += 1
             document.getElementById("error-count").innerHTML = errors
             percentage = calculateAccuracy()
-            document.getElementById("accuracy-percentage").innerHTML = percentage
+            document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
         } 
 }
 
 
 function calculateAccuracy() {
-    accuracy = 
+    accuracy = 100 - (errors / correct) * 100 
+    return accuracy.toFixed(1)
 }
 
 
