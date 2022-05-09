@@ -56,18 +56,33 @@ function resetLetter() {
             letter.className = "";
 }
 
+
+/**
+ * calls deleteButtons function and enter text
+ * to be typed by user.
+ */
 function typeText() {
-    deleteButtons()
+    oldText = document.getElementById("text");
+    deleteButtons(oldText);
+    newText = ""
+    for (let letter in text) {
+        newText += `<span>${text[letter]}</span>`;
+    }
+    oldText.innerHTML = newText;
 }
 
-function deleteButtons() {
-    document.getElementById("text").innerHTML = "";
+
+/**
+ * Deletes buttons and placeholder text from html
+ */
+function deleteButtons(text) {
+    text.innerHTML = "";
     document.getElementById("code-option").style.display = "none";
     document.getElementById("text-option").style.display = "none";
 }
 
 typedLetters = [];
-text = ['S', 'e', 'l', 'e', 'c', 't', ' ', 'a', 'n', ' ', 'o', 'p', 't', 'i', 'o', 'n',':', ' ', 'T', 'e', 'x', 't', ' ', 'o', 'r', ' ', 'C', 'o', 'd', 'e', '?']
+text = "Hallo dit is een proeftekst om de functie te testen"
 
 // nocode:
     // `Make spacebar red as well if not hit (probably with background color.)
