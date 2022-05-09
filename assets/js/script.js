@@ -1,49 +1,58 @@
-document.addEventListener("keydown", function(event) {
-    if (event.key === event.key ) {
-        if (event.key === "Shift") {
-            // do nothing
-        } else if (symbols.includes(event.key)) {
-            typedLetters.push(event.key);
-            console.log(typedLetters);
-            compareText();
-        } else if (event.key === "Backspace") {
-            typedLetters.pop()
-            console.log(typedLetters)
-            resetLetter()
-        } else {
-            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
-            typedLetters.push(event.key);
-            console.log(typedLetters);
-            compareText();
+/**
+ * Listens for keys after user selects code or text option.
+ * Calls appropriate functions for program to run.
+ */
+function listenForKeys() {
+    document.addEventListener("keydown", function(event) {
+        if (event.key === event.key ) {
+            if (event.key === "Shift") {
+                // do nothing
+            } else if (symbols.includes(event.key)) {
+                typedLetters.push(event.key);
+                compareText();
+            } else if (event.key === "Backspace") {
+                typedLetters.pop()
+                resetLetter()
+            } else {
+                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
+                typedLetters.push(event.key);
+                compareText();
+            }
         }
-    }
-})
+    })
+    document.addEventListener("keyup", function(event) {
+        if (event.key === event.key) {
+            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
+            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+        }
+    })
+}
 
-document.addEventListener("keyup", function(event) {
-    if (event.key === event.key) {
-        if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
-        document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
-    }
-})
+
 
 let codeOptionMobile = document.getElementById("code-option")
 let textOptionMobile = document.getElementById("text-option")
 let inputField = document.getElementById("input-trigger")
+
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(code)
+    listenForKeys()
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
+    listenForKeys()
 })
 
+
+/**
+ * Compares text typed by user to text that needs to be typed.
+ * Letters are colored red or green depending on if the letter
+ * was typed correctly or not.
+ */
 function compareText() {
         if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
-            console.log("Good Job!");
-            
-            // text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
-            // console.log(text);
             let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
             letterCorrect.className = "right"  
         } else {
@@ -52,6 +61,10 @@ function compareText() {
         } 
 }
 
+
+/**
+ * Reverts color of letter back to black after backspace is hit.
+ */ 
 function resetLetter() {
             let letter = document.getElementById("text").children[typedLetters.length];
             letter.className = "";
