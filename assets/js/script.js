@@ -31,10 +31,11 @@ let textOptionMobile = document.getElementById("text-option")
 let inputField = document.getElementById("input-trigger")
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
+    typeText(code)
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
-    typeText()
+    typeText(text)
 })
 
 function compareText() {
@@ -58,15 +59,15 @@ function resetLetter() {
 
 
 /**
- * calls deleteButtons function and enter text
- * to be typed by user.
+ * calls deleteButtons function and enters text or code
+ * to be typed by user in to paragraph element.
  */
-function typeText() {
+function typeText(textOrCode) {
     oldText = document.getElementById("text");
     deleteButtons(oldText);
     newText = ""
-    for (let letter in text) {
-        newText += `<span>${text[letter]}</span>`;
+    for (let letter in textOrCode) {
+        newText += `<span>${textOrCode[letter]}</span>`;
     }
     oldText.innerHTML = newText;
 }
@@ -82,7 +83,10 @@ function deleteButtons(text) {
 }
 
 typedLetters = [];
-text = "Hallo dit is een proeftekst om de functie te testen"
+text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! It's not convenient to have to go back far in your text to fix mistakes. This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
+code = `<script>
+console.log('Hello, World!')
+</script>`
 
 // nocode:
     // `Make spacebar red as well if not hit (probably with background color.)
