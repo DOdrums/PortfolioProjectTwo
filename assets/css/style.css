@@ -37,11 +37,26 @@ body {
     background-color: lightgrey;
 }
 
+#typing-data {
+    font-size: 20px;
+}
+
+#accuracy {
+    position: absolute;
+    bottom: -16px;
+    right: 298px;
+}
+
+#accuracy-percentage {
+    position: absolute;
+    bottom: 0;
+    right: -23px;
+}
+
 #errors {
     position: absolute;
     bottom: -16px;
     right: 41px;
-    font-size: 74%;
 }
 
 #error-count {

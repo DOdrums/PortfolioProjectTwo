@@ -36,6 +36,8 @@ let textOptionMobile = document.getElementById("text-option-mobile")
 let codeOptionMobile = document.getElementById("code-option-mobile")
 let inputField = document.getElementById("input-trigger")
 
+
+// refactor later
 textOption.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
@@ -68,13 +70,23 @@ codeOptionMobile.addEventListener("click", function() {
 function compareText() {
         if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
             let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
-            letterCorrect.className = "right"  
+            letterCorrect.className = "right"
+            correct += 1
+            percentage = calculateAccuracy()
+            document.getElementById("accuracy-percentage").innerHTML = percentage
         } else {
             let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
             letterWrong.className = "wrong";
             errors += 1
             document.getElementById("error-count").innerHTML = errors
+            percentage = calculateAccuracy()
+            document.getElementById("accuracy-percentage").innerHTML = percentage
         } 
+}
+
+
+function calculateAccuracy() {
+    accuracy = 
 }
 
 
@@ -114,6 +126,7 @@ function deleteButtons(text) {
     document.getElementById("text-option-mobile").style.display = "none";
 }
 
+let correct = 0;
 let errors = 0;
 let typedLetters = [];
 let  symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"]
@@ -125,4 +138,6 @@ let checkText = ""
     // `Make spacebar red as well if not hit (probably with background color.)
 
     // When restart button is hit, text disappears and typedLetters list is reset.
+
+    // Refactor code to use datatypes (makes multiple event listeners unnescasarry)
     // `
