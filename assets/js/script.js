@@ -26,20 +26,19 @@ document.addEventListener("keyup", function(event) {
     }
 })
 
-let codeOptionMobile = document.getElementById("code-option-mobile")
-let textOptionMobile = document.getElementById("text-option-mobile")
+let codeOptionMobile = document.getElementById("code-option")
+let textOptionMobile = document.getElementById("text-option")
 let inputField = document.getElementById("input-trigger")
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
-    console.log("Yeah2!")
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
-    console.log("Yeah3")
+    typeText()
 })
 
 function compareText() {
-        if (typedLetters[typedLetters.length - 1] === typeText[typedLetters.length - 1]) {
+        if (typedLetters[typedLetters.length - 1] === text[typedLetters.length - 1]) {
             console.log("Good Job!");
             
             // text = document.getElementById("text-box").innerText.charAt(typedLetters.length - 1);
@@ -57,8 +56,18 @@ function resetLetter() {
             letter.className = "";
 }
 
+function typeText() {
+    deleteButtons()
+}
+
+function deleteButtons() {
+    document.getElementById("text").innerHTML = "";
+    document.getElementById("code-option").style.display = "none";
+    document.getElementById("text-option").style.display = "none";
+}
+
 typedLetters = [];
-typeText = ['S', 'e', 'l', 'e', 'c', 't', ' ', 'a', 'n', ' ', 'o', 'p', 't', 'i', 'o', 'n',':', ' ', 'T', 'e', 'x', 't', ' ', 'o', 'r', ' ', 'C', 'o', 'd', 'e', '?']
+text = ['S', 'e', 'l', 'e', 'c', 't', ' ', 'a', 'n', ' ', 'o', 'p', 't', 'i', 'o', 'n',':', ' ', 'T', 'e', 'x', 't', ' ', 'o', 'r', ' ', 'C', 'o', 'd', 'e', '?']
 
 // nocode:
     // `Make spacebar red as well if not hit (probably with background color.)
