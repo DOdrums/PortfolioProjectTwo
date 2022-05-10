@@ -275,6 +275,9 @@ body {
     #code-option-mobile p, #text-option-mobile p {
         padding: 15px;
     }
+    #typing-data {
+        font-size: 15px;
+    }
     #refresh {
         display: none;
     }
@@ -282,6 +285,25 @@ body {
         display: inline-block;
         position: absolute;
         bottom: 3px;
-        right: 95%;
+        right: 92%;
+    }
+    #time {
+        right: 73%;
+        bottom: -13px;
+    }
+    #wpm {
+        right: 73%;
+        bottom: -13px;
+    }
+    #accuracy {
+        bottom: -13px;
+        right: 48%;
+    }
+    #errors {
+        bottom: -13px;
+        right: 30px;
+    }
+    #error-count {
+        left: 53px;
     }
 }
