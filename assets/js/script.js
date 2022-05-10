@@ -97,7 +97,12 @@ function changeTimer() {
 //     document.getElementById("wpm-count").innerHTML = Math.floor(timeDiff)
 // }
 
+/**
+ * Calculates the WPM from amount of words 
+ * typed and time difference.
+ */
 function calculateWPM(time) {
+    // code taken from: https://bobbyhadz.com/blog/javascript-count-occurrences-of-each-element-in-array
     let count = {};
     for (let element of typedLetters) {
         if (count[element]) {
@@ -106,7 +111,7 @@ function calculateWPM(time) {
             count[element] = 1;
         }
     }
-    // calculateTime(startTime, count)
+    // code inspired from: https://ralzohairi.medium.com/displaying-dynamic-elapsed-time-in-javascript-260fa0e95049
     let endTime = new Date()
     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
     wpm = Math.floor(60 / timeDiff * count[" "]);

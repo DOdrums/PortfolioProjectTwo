@@ -156,6 +156,7 @@ body {
 }
 
 .lrow {
+    /* code found on https://stackoverflow.com/a/13625843/16545052 */
     width: 92%;
     height: 0;
     padding-bottom: 12%;
@@ -167,6 +168,7 @@ body {
 }
 
 .rrow {
+    /* code found on https://stackoverflow.com/a/13625843/16545052 */
     width: 92%;
     height: 0;
     padding-bottom: 12%;
