@@ -17,7 +17,7 @@ element:focus {
 /* styling for top section */
 #top-section {
     width: 91%;
-    height: 83vw;
+    height: 70vw;
     max-height: 1183px;
     margin: 0 auto;
 }
@@ -25,7 +25,7 @@ element:focus {
 #moonlander-image {
     background-color: lightblue;
     max-width: 700px;
-    width: 58%;
+    width: 48%;
     float: left;
 }
 
@@ -35,14 +35,21 @@ element:focus {
     width: 98%;
 }
 
-#intro {
-    width: 30%;
+#intro-explain {
+    width: 48%;
     float: right;
 }
 
+#intro {
+    background: yellow;
+    width: 80%;
+    float: left;
+}
+
 #explanation {
-    width: 30%;
-    float: right;
+    background-color: yellow;
+    width: 80%;
+    float: left;
 }
 
 
