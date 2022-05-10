@@ -46,25 +46,22 @@ element:focus {
     float: right;
 }
 
-#intro {
+.sticky-note {
     background: lemonchiffon;
+    font-family: fantasy;
     width: 73%;
     height: 30vw;
     max-height: 487px;
     margin-bottom: 79px;
     float: left;
-    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
+    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%); 
+}
+#intro {
+    margin-bottom: 79px;
 }
 
-#explanation {
-    background-color: lemonchiffon;
-    width: 80%;
-    width: 73%;
-    height: 30vw;
-    max-height: 487px;
-    float: left;
-    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
-    float: left;
+.sticky-note p, h2 {
+    margin: 20px;
 }
 
 
