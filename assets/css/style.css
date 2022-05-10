@@ -8,6 +8,12 @@ body {
     display: none;
 }
 
+element:focus {
+	outline-style: none;
+	box-shadow: none;
+	border-color: transparent; 
+}
+/* styling for text box and buttons in box */
 #text-box {
     position: relative;
     background-color: white;
@@ -112,9 +118,13 @@ body {
     background-color: grey;
 }
 
+#cover {
+    position: relative;
+    overflow: hidden;
+}
+
 #input-trigger {
     position: absolute;
-    top: -10%;
     left: 45%;
 
     caret-color: transparent;
@@ -212,6 +222,7 @@ body {
     margin-right: 5px;
 }
 
+/* styling for slightly smaller screen sizes */
 @media screen and (max-width: 1592px) {
     .key {
         font-size: 2vw;
@@ -225,6 +236,7 @@ body {
     }
 }
 
+/* styling for small laptop screens */
 @media screen and (max-width: 1000px) {
     #text-box {
         width: 52vw;
@@ -232,6 +244,7 @@ body {
     }
 }
 
+/* styling for browser windows resizes to half of screen */
 @media screen and (max-width: 860px) {
     #text-box {
         width: 62vw;
@@ -240,7 +253,8 @@ body {
     }
 }  
 
-@media (orientation:portrait) {
+/* styling for phone screens */
+@media screen and (max-width: 700px) {
     #hide {
         display: none;
     }
