@@ -16,7 +16,9 @@ element:focus {
 
 #title {
     text-align: center;
-    height: 83px;
+    height: 106px;
+    color: cadetblue;
+    font-size: 150%;
 }
 
 /* styling for top section */
@@ -49,12 +51,13 @@ element:focus {
 .sticky-note {
     background: lemonchiffon;
     font-family: fantasy;
+    text-align: center;
     width: 47%;
     height: 40vw;
     max-height: 487px;
     margin-bottom: 79px;
     float: left;
-    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%); 
+    box-shadow: 7px 7px 12px rgb(33 33 33 / 70%); 
 }
 #intro {
     float: left;
@@ -66,7 +69,16 @@ element:focus {
 }
 
 .sticky-note p, h2 {
-    margin: 20px;
+    margin: 30px;
+}
+
+.sticky-note p {
+    font-size: 23px;
+    line-height: 49px;
+}
+
+.sticky-note h2 {
+    font-size: 35px;
 }
 
 
@@ -281,8 +293,9 @@ element:focus {
 
 /* styling for slightly smaller screen sizes */
 @media screen and (max-width: 1592px) {
-    #intro {
-        margin-bottom: 12%;
+    .sticky-note p {
+        font-size: 1.5vw;
+        line-height: 3vw;
     }
     .key {
         font-size: 2vw;
@@ -298,6 +311,13 @@ element:focus {
 
 /* styling for small laptop screens */
 @media screen and (max-width: 1000px) {
+    .sticky-note p {
+        font-size: 2vw;
+        line-height: 3vw;
+    }
+    .sticky-note h2 {
+        font-size: 3vw;
+    }
     #text-box {
         width: 52vw;
         font-size: 175%;
@@ -323,11 +343,6 @@ element:focus {
         max-height: 4000px;
         height: 730px;
     }
-    #moonlander-image {
-        float: none;
-        width: 94%;
-        margin: 0 auto;
-    }
     #intro-explain {
         width: 95%;
         margin: 0 auto;
@@ -338,6 +353,13 @@ element:focus {
         float: none;
         width: 95%;
         height: 320px;
+    }
+    .sticky-note p {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .sticky-note h2 {
+        font-size: 33px;
     }
     #intro {
         float: none;
