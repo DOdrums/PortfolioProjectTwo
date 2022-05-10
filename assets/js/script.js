@@ -107,6 +107,8 @@ function changeTimer() {
     document.getElementById("time").style.display = "inline-block"
 }
 
+
+// all timer code taken from: https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
 let millisecond = 0;
 let second = 0;
 let cron;

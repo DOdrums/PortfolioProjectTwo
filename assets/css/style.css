@@ -50,41 +50,46 @@ body {
     font-size: 19px;
 }
 
+#refresh {
+    position: absolute;
+    bottom: 3px;
+    right: 95%;
+}
 #time {
     display: none;
     position: absolute;
     bottom: -16px;
-    right: 601px; 
+    right: 74%; 
 }
 
 #time-count {
     position: absolute;
     bottom: 0px;
-    left: 59px;
+    left: 107%;
 }
 
 #wpm {
     position: absolute;
     bottom: -16px;
-    right: 601px; 
+    right: 74%; 
 }
 
 #wpm-count {
     position: absolute;
     bottom: 0px;
-    left: 59px;
+    left: 107%;
 }
 
 #accuracy {
     position: absolute;
     bottom: -16px;
-    right: 298px;
+    right: 38%;
 }
 
 #accuracy-percentage {
     position: absolute;
     bottom: 0;
-    left: 97px;
+    left: 107%;
 }
 
 #errors {
