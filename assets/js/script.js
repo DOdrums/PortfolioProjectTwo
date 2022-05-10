@@ -10,6 +10,7 @@ textOption.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
     listenForKeys()
+    textPicked = true
 })
 codeOption.addEventListener("click", function() {
     typeText(code)
@@ -21,6 +22,7 @@ textOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
     listenForKeys()
+    textPicked = true
 })
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
@@ -42,7 +44,9 @@ function listenForKeys() {
             } else if (symbols.includes(event.key)) {
                 typedLetters.push(event.key);
                 compareText();
+                if (textPicked) {
                 calculateWPM();
+                }
             } else if (event.key === "Backspace") {
                 typedLetters.pop()
                 resetLetter()
@@ -157,6 +161,7 @@ function deleteButtons(text) {
     document.getElementById("text-option-mobile").style.display = "none";
 }
 
+let textPicked = false
 let correct = 0;
 let errors = 0;
 let typedLetters = [];
