@@ -203,13 +203,14 @@ function resetLetter() {
 }
 
 /**
- * calls deleteButtons function and enters text or code
+ * calls deleteThings function and enters text or code
  * to be typed by user in to paragraph element.
  */
 function typeText(textOrCode) {
     let oldText = document.getElementById("text");
     let displayValue = "none"
-    deleteThings(oldText, displayValue);
+    let displayValueMobile = "none"
+    deleteThings(oldText, displayValue, displayValueMobile);
     let newText = ""
     for (let letter in textOrCode) {
         newText += `<span>${textOrCode[letter]}</span>`;
