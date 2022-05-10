@@ -316,7 +316,7 @@ element:focus {
     #top-section {
         width: 97%;
         max-height: 4000px;
-        height: 216vw;
+        height: 100%;
     }
     #moonlander-image {
         float: none;
@@ -332,6 +332,7 @@ element:focus {
         margin: 0 auto;
         float: none;
         width: 90%;
+        height: 320px;
     }
     #hide {
         display: none;
@@ -339,6 +340,7 @@ element:focus {
     #text-box {
         width: 92vw;
         font-size: 128%;
+        margin-top: 31px;
     }
     #text-option {
         display: none;
