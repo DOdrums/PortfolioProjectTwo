@@ -207,7 +207,7 @@ element:focus {
 .keyboard {
     width: 89%;
     max-width: 1400px;
-    height: 600px;
+    height: 419px;
     margin: 30px auto;
 }
 
@@ -310,6 +310,29 @@ element:focus {
 
 /* styling for phone screens */
 @media screen and (max-width: 700px) {
+    #title {
+        font-size: 12px;
+    }
+    #top-section {
+        width: 97%;
+        max-height: 4000px;
+        height: 216vw;
+    }
+    #moonlander-image {
+        float: none;
+        width: 94%;
+        margin: 0 auto;
+    }
+    #intro-explain {
+        width: 95%;
+        margin: 0 auto;
+        float: none;
+    }
+    .sticky-note {
+        margin: 0 auto;
+        float: none;
+        width: 90%;
+    }
     #hide {
         display: none;
     }
