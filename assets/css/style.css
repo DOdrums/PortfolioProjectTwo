@@ -23,8 +23,8 @@ element:focus {
 #top-section {
     width: 91%;
     max-width: 1600px;
-    height: 70vw;
-    max-height: 1183px;
+    height: 48vw;
+    max-height: 580px;
     margin: 0 auto;
 }
 
@@ -42,22 +42,27 @@ element:focus {
 }
 
 #intro-explain {
-    width: 48%;
-    float: right;
+    width: 93%;
+    margin: 0 auto;
 }
 
 .sticky-note {
     background: lemonchiffon;
     font-family: fantasy;
-    width: 73%;
-    height: 30vw;
+    width: 47%;
+    height: 40vw;
     max-height: 487px;
     margin-bottom: 79px;
     float: left;
     box-shadow: 5px 5px 7px rgb(33 33 33 / 70%); 
 }
 #intro {
+    float: left;
     margin-bottom: 79px;
+}
+
+#explanation {
+    float: right;
 }
 
 .sticky-note p, h2 {
@@ -316,7 +321,7 @@ element:focus {
     #top-section {
         width: 97%;
         max-height: 4000px;
-        height: 100%;
+        height: 730px;
     }
     #moonlander-image {
         float: none;
@@ -331,8 +336,14 @@ element:focus {
     .sticky-note {
         margin: 0 auto;
         float: none;
-        width: 90%;
+        width: 95%;
         height: 320px;
+    }
+    #intro {
+        float: none;
+    }
+    #explanation {
+        float: none;
     }
     #hide {
         display: none;

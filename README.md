@@ -17,7 +17,6 @@ This project is built as part of the Code Institute Full Stack Software Developm
 
 ### Images
 
-* Moonlander image taken from: [image](https://res.cloudinary.com/zsa-technology/image/upload/w_678/v1637636176/zsa-io-production/2-two-halves)
   
 ## Testing
 
