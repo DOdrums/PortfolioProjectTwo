@@ -3,43 +3,50 @@ let textOption = document.getElementById("text-option")
 let textOptionMobile = document.getElementById("text-option-mobile")
 let codeOptionMobile = document.getElementById("code-option-mobile")
 let inputField = document.getElementById("input-trigger")
+let refreshBtn = document.getElementById("refresh")
+let refreshBtnMobile = document.getElementById("refresh-mobile")
 
 
 // refactor later
 textOption.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
-    listenForKeys()
     textPicked = true
+    click = true
 })
 codeOption.addEventListener("click", function() {
     typeText(code)
     inputField.focus()
-    listenForKeys()
-    changeTimer()
+    click = true
+    changeTimer("none", "inline-block")
     codePicked = true
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(text)
-    listenForKeys()
+    click = true
     textPicked = true
 })
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(code)
-    listenForKeys()
-    changeTimer()
+    click = true
+    changeTimer("none", "inline-block")
     codePicked = true
+})
+refreshBtn.addEventListener("click", function() {
+    refresh("inline-block", "none")
+})
+refreshBtnMobile.addEventListener("click", function() {
+    refresh("none", "block")
 })
 
 /**
  * Listens for keys after user selects code or text option.
  * Calls appropriate functions for program to run.
  */
-function listenForKeys() {
     document.addEventListener("keydown", function(event) {
-        if (event.key === event.key) {
+        if (event.key === event.key && click === true) {
             if (event.key === event.key && typedLetters < 1 && event.key !== "Shift") {
                 startTime = new Date();
                 if (codePicked) {
@@ -69,7 +76,7 @@ function listenForKeys() {
             document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
         }
     })
-}
+
 
 let startTime;
 
@@ -101,10 +108,10 @@ function compareText() {
         } 
 }
 
-function changeTimer() {
-    document.getElementById("wpm").id = "hideText"
-    document.getElementById("wpm-count").id = "hideText"
-    document.getElementById("time").style.display = "inline-block"
+function changeTimer(val1, val2) {
+    document.getElementById("wpm").style.display = val1
+    document.getElementById("wpm-count").style.display = val1
+    document.getElementById("time").style.display = val2
 }
 
 
@@ -134,6 +141,31 @@ function reset() {
     second = 0;
     millisecond = 0;
     document.getElementById("time-count").innerText = "0";
+}
+
+function refresh(displayValue, displayValueMobile) {
+    let text = document.getElementById("text")
+    let newValue = displayValue
+    let newValueMobile = displayValueMobile
+    deleteThings(text, newValue, newValueMobile);
+    document.getElementById("text").innerHTML = "Select an option: Text or Code?";
+    reset();
+    pause();
+    typedLetters = [];
+    if (codePicked) {
+        changeTimer("inline-block", "none")
+        document.getElementById("accuracy-percentage").innerHTML = ""
+        document.getElementById("error-count").innerHTML = 0
+    } else {
+        document.getElementById("wpm-count").innerHTML = 0;
+        document.getElementById("accuracy-percentage").innerHTML = ""
+        document.getElementById("error-count").innerHTML = 0
+    }
+    codePicked = false;
+    textPicked = false;
+    click = false;
+    correct = 0;
+    errors = 0;
 }
 
 /**
@@ -175,9 +207,10 @@ function resetLetter() {
  * to be typed by user in to paragraph element.
  */
 function typeText(textOrCode) {
-    oldText = document.getElementById("text");
-    deleteButtons(oldText);
-    newText = ""
+    let oldText = document.getElementById("text");
+    let displayValue = "none"
+    deleteThings(oldText, displayValue);
+    let newText = ""
     for (let letter in textOrCode) {
         newText += `<span>${textOrCode[letter]}</span>`;
     }
@@ -188,14 +221,15 @@ function typeText(textOrCode) {
 /**
  * Deletes buttons and placeholder text from html
  */
-function deleteButtons(text) {
+function deleteThings(text, displayVal, displayValMobile) {
     text.innerHTML = "";
-    document.getElementById("code-option").style.display = "none";
-    document.getElementById("text-option").style.display = "none";
-    document.getElementById("code-option-mobile").style.display = "none";
-    document.getElementById("text-option-mobile").style.display = "none";
+    document.getElementById("code-option").style.display = displayVal;
+    document.getElementById("text-option").style.display = displayVal;
+    document.getElementById("code-option-mobile").style.display = displayValMobile;
+    document.getElementById("text-option-mobile").style.display = displayValMobile;
 }
 
+let click = false
 let codePicked = false
 let textPicked = false
 let correct = 0;

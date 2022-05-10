@@ -32,7 +32,7 @@ body {
     width: 30%;
     height: 30%;
     float: left;
-    margin: 20px 0 0 20px;
+    margin: 20px 0 0 14%;
 
     background-color: lightgrey;
 }
@@ -41,7 +41,7 @@ body {
     width: 30%;
     height: 30%;
     float: right;
-    margin: 20px 20px 0 0;
+    margin: 20px 14% 0 0;
 
     background-color: lightgrey;
 }
@@ -54,6 +54,9 @@ body {
     position: absolute;
     bottom: 3px;
     right: 95%;
+}
+#refresh-mobile {
+    display: none;
 }
 #time {
     display: none;
@@ -271,5 +274,14 @@ body {
 
     #code-option-mobile p, #text-option-mobile p {
         padding: 15px;
+    }
+    #refresh {
+        display: none;
+    }
+    #refresh-mobile {
+        display: inline-block;
+        position: absolute;
+        bottom: 3px;
+        right: 95%;
     }
 }
