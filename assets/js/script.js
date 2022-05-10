@@ -17,6 +17,7 @@ codeOption.addEventListener("click", function() {
     inputField.focus()
     listenForKeys()
     changeTimer()
+    codePicked = true
 })
 textOptionMobile.addEventListener("click", function() {
     inputField.focus()
@@ -28,6 +29,8 @@ codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
     typeText(code)
     listenForKeys()
+    changeTimer()
+    codePicked = true
 })
 
 /**
@@ -37,8 +40,11 @@ codeOptionMobile.addEventListener("click", function() {
 function listenForKeys() {
     document.addEventListener("keydown", function(event) {
         if (event.key === event.key) {
-            if (event.key === event.key && typedLetters < 1) {
-                startTime = new Date()
+            if (event.key === event.key && typedLetters < 1 && event.key !== "Shift") {
+                startTime = new Date();
+                if (codePicked) {
+                    start();
+                }
             } if (event.key === "Shift") {
                 // do nothing
             } else if (symbols.includes(event.key)) {
@@ -48,8 +54,8 @@ function listenForKeys() {
                 calculateWPM();
                 }
             } else if (event.key === "Backspace") {
-                typedLetters.pop()
-                resetLetter()
+                typedLetters.pop();
+                resetLetter();
             } else {
                 document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
                 typedLetters.push(event.key);
@@ -79,6 +85,9 @@ function compareText() {
             correct += 1
             percentage = calculateAccuracy()
             document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
+            if (typedLetters.length === code.length) {
+                pause();
+            } 
         } else {
             let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
             letterWrong.className = "wrong";
@@ -86,6 +95,9 @@ function compareText() {
             document.getElementById("error-count").innerHTML = errors
             percentage = calculateAccuracy()
             document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
+            if (typedLetters.length === code.length) {
+                pause();
+            } 
         } 
 }
 
@@ -95,11 +107,32 @@ function changeTimer() {
     document.getElementById("time").style.display = "inline-block"
 }
 
-// function timer() {
-//     let endTime = new Date()
-//     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
-//     document.getElementById("wpm-count").innerHTML = Math.floor(timeDiff)
-// }
+let millisecond = 0;
+let second = 0;
+let cron;
+
+function timer() {
+    if ((millisecond += 10) == 1000) {
+        millisecond = 0;
+        second++;
+        document.getElementById("time-count").innerText = second;
+    }
+}
+
+function start() {
+    pause();
+    cron = setInterval(() => { timer(); }, 10);
+}
+
+function pause() {
+    clearInterval(cron);
+}
+
+function reset() {
+    second = 0;
+    millisecond = 0;
+    document.getElementById("time-count").innerText = "0";
+}
 
 /**
  * Calculates the WPM from amount of words 
@@ -161,6 +194,7 @@ function deleteButtons(text) {
     document.getElementById("text-option-mobile").style.display = "none";
 }
 
+let codePicked = false
 let textPicked = false
 let correct = 0;
 let errors = 0;
