@@ -41,14 +41,21 @@ element:focus {
 }
 
 #intro {
-    background: yellow;
-    width: 80%;
+    background: lemonchiffon;
+    width: 73%;
+    height: 30vw;
+    margin-bottom: 79px;
     float: left;
+    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
 }
 
 #explanation {
-    background-color: yellow;
+    background-color: lemonchiffon;
     width: 80%;
+    width: 73%;
+    height: 30vw;
+    float: left;
+    box-shadow: 5px 5px 7px rgb(33 33 33 / 70%);
     float: left;
 }
 
