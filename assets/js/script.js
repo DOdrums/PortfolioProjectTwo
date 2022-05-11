@@ -26,6 +26,7 @@ textOptionMobile.addEventListener("click", function() {
     typeText(text)
     click = true
     textPicked = true
+    document.getElementById("text-box").style.marginBottom = "322px"
 })
 codeOptionMobile.addEventListener("click", function() {
     inputField.focus()
@@ -33,6 +34,7 @@ codeOptionMobile.addEventListener("click", function() {
     click = true
     changeTimer("none", "inline-block")
     codePicked = true
+    document.getElementById("text-box").style.marginBottom = "322px"
 })
 refreshBtn.addEventListener("click", function() {
     refresh("inline-block", "none")
@@ -148,6 +150,7 @@ function refresh(displayValue, displayValueMobile) {
     let newValue = displayValue
     let newValueMobile = displayValueMobile
     deleteThings(text, newValue, newValueMobile);
+    document.getElementById("text-box").style.marginBottom = "0"
     document.getElementById("text").innerHTML = "Select an option: Text or Code?";
     reset();
     pause();
