@@ -24,4 +24,4 @@ This project is built as part of the Code Institute Full Stack Software Developm
 ### Bugs
 
 * The error 'Uncaught Typerror' would frequently pop up when typing text in the textbox, this was due to the Shift key not being able to be accessed in the DOM (no ID written for any Shift key). Furthermore, any capital letters were also not recognized in the DOM, again because there are not ID's for them. These issues were fixed by writing an extra for loop, eliminating event.key matches for any Shift keys and using the toLowerCase method to make any uppercase letters lowercase before accessing the DOM.
-
+* When scrolling down, the header would disappear behind the textbox. To fix this, the textbox was given a z-index of -1. This however, broke the buttons, since they now weren't clickable anymroe. I took a while to find the issue, but eventually it was fixed by removing the z-index from the text box and instead give the header a z-index of 1. 

@@ -25,6 +25,7 @@ element:focus {
     position: sticky;
     top: 0;
     transition: 0.3s;
+    z-index: 1;
 }
 
 #title img {
@@ -114,7 +115,6 @@ element:focus {
     max-width: 671px;
     height: 304px;
     margin: 0 auto;
-    z-index: -1;
 
     font-family: 'Inter', sans-serif;
     font-size: 200%;
