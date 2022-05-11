@@ -61,8 +61,16 @@ refreshBtnMobile.addEventListener("click", function() {
                 calculateWPM();
                 }
             } else if (event.key === "Backspace") {
-                typedLetters.pop();
-                resetLetter();
+                if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
+                    correct -= 1;
+                    typedLetters.pop();
+                    resetLetter();
+                    console.log(correct)
+                }
+                else {
+                    typedLetters.pop();
+                    resetLetter();
+                }
             } else {
                 try {
                     document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
