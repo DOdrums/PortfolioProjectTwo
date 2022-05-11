@@ -114,6 +114,7 @@ element:focus {
     max-width: 671px;
     height: 304px;
     margin: 0 auto;
+    z-index: -1;
 
     font-family: 'Inter', sans-serif;
     font-size: 200%;
@@ -333,6 +334,9 @@ element:focus {
 
 /* styling for small laptop screens */
 @media screen and (max-width: 1000px) {
+    .sticky-note p, h2 {
+        margin: 14px;
+    }
     .sticky-note p {
         font-size: 2vw;
         line-height: 3vw;
@@ -380,11 +384,12 @@ element:focus {
         height: 320px;
     }
     .sticky-note p {
-        font-size: 18px;
-        line-height: 30px;
+        font-size: 17px;
+        line-height: 29px;
     }
     .sticky-note h2 {
-        font-size: 33px;
+        font-size: 30px;
+        padding: 13px 0 0 0;
     }
     #intro {
         float: none;
@@ -420,7 +425,7 @@ element:focus {
         display: block;
         width: 67%;
         height: 53px;
-        margin: 53px auto 0 auto;
+        margin: 53px auto 57px auto;
         background-color: grey;
     }
 
@@ -466,6 +471,7 @@ element:focus {
         text-align: center;
         font-size: 15px;
         height: 108px;
+        margin-bottom: 61px;
     }
     #title img {
         width: 88px;
@@ -479,4 +485,20 @@ element:focus {
     #title-desktop {
         display: none;
     }
-}    
+    #top-section {
+        height: 835px;
+    }
+    .sticky-note {
+        height: 368px;
+    }
+}   
+
+@media screen and (max-width: 379px) {
+    #top-section {
+        height: 938px;
+    }
+    .sticky-note {
+        height: 422px;
+        margin-bottom: 56px;
+    }
+}
