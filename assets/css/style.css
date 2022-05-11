@@ -124,6 +124,7 @@ element:focus {
 #text {
     position: relative;
     top: -19px;
+    padding: 10px 0 0 0;
 }
 
 #text-option {
