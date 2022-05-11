@@ -13,34 +13,34 @@ textOption.addEventListener("click", function () {
     typeText(text);
     textPicked = true;
     click = true;
-})
+});
 codeOption.addEventListener("click", function () {
     typeText(code);
     inputField.focus();
     click = true;
     changeTimer("none", "inline-block");
     codePicked = true;
-})
+});
 textOptionMobile.addEventListener("click", function () {
     inputField.focus();
     typeText(text);
     click = true;
     textPicked = true;
-})
+});
 codeOptionMobile.addEventListener("click", function () {
     inputField.focus();
     typeText(code);
     click = true;
     changeTimer("none", "inline-block");
     codePicked = true;
-})
+});
 // listens for click on refresh button
 refreshBtn.addEventListener("click", function () {
     refresh("inline-block", "none");
-})
+});
 refreshBtnMobile.addEventListener("click", function () {
     refresh("none", "block");
-})
+});
 
 /**
  * Listens for keys after user selects code or text option.
@@ -81,7 +81,7 @@ document.addEventListener("keydown", function (event) {
             }
         }
     }
-})
+});
 document.addEventListener("keyup", function (event) {
     if (event.key === event.key) {
         if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key)) {
@@ -92,7 +92,7 @@ document.addEventListener("keyup", function (event) {
             }
         }
     }
-})
+});
 
 
 let startTime;
@@ -107,7 +107,7 @@ function compareText() {
         let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
         letterCorrect.className = "right";
         correct += 1;
-        percentage = calculateAccuracy();
+        let percentage = calculateAccuracy();
         document.getElementById("accuracy-percentage").innerHTML = percentage + "%";
         if (typedLetters.length === code.length) {
             pause();
@@ -215,7 +215,7 @@ function calculateWPM(time) {
     // code inspired from: https://ralzohairi.medium.com/displaying-dynamic-elapsed-time-in-javascript-260fa0e95049
     let endTime = new Date();
     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
-    wpm = Math.floor(60 / timeDiff * count[" "]);
+    let wpm = Math.floor(60 / timeDiff * count[" "]);
     document.getElementById("wpm-count").innerHTML = wpm;
 }
 
@@ -223,7 +223,7 @@ function calculateWPM(time) {
  * Calculates accuracy from correct and incorrectly typed letters
  */
 function calculateAccuracy() {
-    accuracy = 100 - (errors / correct) * 100;
+    let accuracy = 100 - (errors / correct) * 100;
     return accuracy.toFixed(1);
 }
 
@@ -277,7 +277,7 @@ window.onscroll = function () {
         document.getElementById("title").style.top = "-120px";
     }
     prevScrollpos = currentScrollPos;
-}
+};
 
 let click = false;
 let codePicked = false;
@@ -286,6 +286,6 @@ let correct = 0;
 let errors = 0;
 let typedLetters = [];
 let symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"];
-let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
+let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard.";
 let code = `<script>console.log('Hello, World!')</script>`;
 let checkText = "";
