@@ -230,6 +230,22 @@ function deleteThings(text, displayVal, displayValMobile) {
     document.getElementById("text-option-mobile").style.display = displayValMobile;
 }
 
+
+/**
+ * Make navbar disappear and appear on scroll.
+ */
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+    // code taken from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("title").style.top = "0";
+  } else {
+    document.getElementById("title").style.top = "-120px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
 let click = false
 let codePicked = false
 let textPicked = false
