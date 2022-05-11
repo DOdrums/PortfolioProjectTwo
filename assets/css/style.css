@@ -18,17 +18,24 @@ element:focus {
 #title {
     text-align: center;
     background-color: #525050;
-    height: 77px;
-    margin-top: -32px;
-    margin-bottom: 56px;
+    height: 117px;
+    margin-bottom: 75px;
     color: #d8f1f2;
-    font-size: 150%;
+    font-size: 141%;
     position: sticky;
     top: 0;
 }
 
+#title img {
+    display: inline-block;
+    margin: 5px 20px 0 0;
+    width: 107px;
+}
+
 #title h1 {
-    line-height: 69px;
+    display: inline-block;
+    position: relative;
+    top: -41px;
 }
 
 /* styling for top section */
