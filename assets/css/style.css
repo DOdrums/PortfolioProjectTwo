@@ -2,6 +2,7 @@ body {
     background-color: white;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
+    margin: 0px;
 }
 
 #hideText {
@@ -16,9 +17,18 @@ element:focus {
 
 #title {
     text-align: center;
-    height: 106px;
-    color: cadetblue;
+    background-color: #525050;
+    height: 77px;
+    margin-top: -32px;
+    margin-bottom: 56px;
+    color: #d8f1f2;
     font-size: 150%;
+    position: sticky;
+    top: 0;
+}
+
+#title h1 {
+    line-height: 69px;
 }
 
 /* styling for top section */
