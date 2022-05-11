@@ -4,7 +4,48 @@
 
 This project is built as part of the Code Institute Full Stack Software Development course. For this course, Dirk Ornee had to built a second Portfolio Project. Inspired by his recent purchase of a ZSA Moonlander keyboard, he decided to build an app that would help new users get familiar with their Moonlander.
 
+## Live Site
+
+[Moonlader Typing Tutor](https://dodrums.github.io/PortfolioProjectTwo/)
+
+## Github Repository
+
+[PortfolioProjectTwo](https://github.com/DOdrums/PortfolioProjectTwo)
+
 ## UX
+
+### Business Goals
+
+The goal of this project, is to develop a helpful typing tutor for people who just purchased the Moonlander keyboard by ZSA. This tutor should make them a bit more comfortable when first starting out with typing on the Moonlander. Besides that, they should have fun in challenging themselves.
+
+### Target Audience
+
+The target audience for this project is anybody who loves to learn touch typing or improve their touch typing skills. However, it is aimed specifically towards people who own a Moonlander keyboard. This keyboard has an ortholinear split layout, which can make it very challenging to start typing on it. To help them out a little bit, they can see a virtual keyboard right below the text box, to show them which key they just typed. This can help them get a better sense of where each key is, without looking down at their fingers.
+
+### User Stories
+
+#### As the owner
+
+* I want to build a helpful tool for people how buy the Moonlander.
+* I want the user to improve their typing and have data to back that up.
+* I want the user to be challenged and have fun.
+* I want the user to keep trying and playing with the tutor.
+* I want the user to get a good sense of where each letter is on their Moonlander keyboard.
+
+#### As a new user
+
+* I want to easily navigate the website.
+* I want to quickly understand the goal of the website.
+* I want to train my typing and have data to see if I am improving.
+* I want to be able to switch between different modes quickly.
+* I want to be able to challenge myself.
+* I want to use this tutor to start typing on my Moonlander.
+
+#### As a returning user
+
+* I want to be able to challenge myself again
+* I want to be able to improve on my previous scores
+* I want to train my usage of the Moonlander keyboard.
 
 ### Structure of the website
 
