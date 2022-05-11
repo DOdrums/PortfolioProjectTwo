@@ -64,16 +64,27 @@ refreshBtnMobile.addEventListener("click", function() {
                 typedLetters.pop();
                 resetLetter();
             } else {
-                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
-                typedLetters.push(event.key);
-                compareText();
+                try {
+                    document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
+                    typedLetters.push(event.key);
+                    compareText();
+                }
+                catch(err) {
+                    // do nothing
+                }
             }
         }
     })
     document.addEventListener("keyup", function(event) {
         if (event.key === event.key) {
-            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key))
-            document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key)) {
+                try {
+                    document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+                }
+                catch(err) {
+                    // do nothing
+                }
+            }
         }
     })
 
