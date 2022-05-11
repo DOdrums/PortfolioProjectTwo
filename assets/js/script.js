@@ -65,7 +65,6 @@ refreshBtnMobile.addEventListener("click", function() {
                     correct -= 1;
                     typedLetters.pop();
                     resetLetter();
-                    console.log(correct)
                 }
                 else {
                     typedLetters.pop();
