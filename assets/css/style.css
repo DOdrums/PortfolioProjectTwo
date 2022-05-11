@@ -50,7 +50,7 @@ element:focus {
 
 .sticky-note {
     background: lemonchiffon;
-    font-family: fantasy;
+    font-family: 'Delius', cursive;
     text-align: center;
     width: 47%;
     height: 40vw;
