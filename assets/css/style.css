@@ -115,6 +115,7 @@ element:focus {
     max-width: 671px;
     height: 304px;
     margin: 0 auto;
+    padding: 0 20px;
 
     font-family: 'Inter', sans-serif;
     font-size: 200%;
@@ -131,7 +132,7 @@ element:focus {
     width: 30%;
     height: 30%;
     float: left;
-    margin: 20px 0 0 14%;
+    margin: 4px 0 0 14%;
 
     background-color: lightgrey;
 }
@@ -140,7 +141,7 @@ element:focus {
     width: 30%;
     height: 30%;
     float: right;
-    margin: 20px 14% 0 0;
+    margin: 4px 14% 0 0;
 
     background-color: lightgrey;
 }
@@ -405,6 +406,7 @@ element:focus {
         width: 92vw;
         font-size: 128%;
         margin-top: 31px;
+        padding: 0;
     }
     #text-option {
         display: none;
