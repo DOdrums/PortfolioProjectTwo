@@ -33,10 +33,14 @@ element:focus {
     width: 107px;
 }
 
-#title h1 {
+#title-desktop {
     display: inline-block;
     position: relative;
     top: -41px;
+}
+
+#title-mobile {
+    display: none;
 }
 
 /* styling for top section */
@@ -356,6 +360,9 @@ element:focus {
     #title {
         font-size: 12px;
     }
+    title h1 {
+        top: -49px;
+    }
     #top-section {
         width: 97%;
         max-height: 4000px;
@@ -452,3 +459,24 @@ element:focus {
         left: 53px;
     }
 }
+
+/* styling for title bar on phone screens */
+@media screen and (max-width: 460px) {
+    #title {
+        text-align: center;
+        font-size: 15px;
+        height: 108px;
+    }
+    #title img {
+        width: 88px;
+        margin: 9px 10px 0 9px;
+    }
+    #title-mobile {
+        position: relative;
+        display: inline-block;
+        top: -18px;
+    }
+    #title-desktop {
+        display: none;
+    }
+}    
