@@ -1,99 +1,97 @@
-let codeOption = document.getElementById("code-option")
-let textOption = document.getElementById("text-option")
-let textOptionMobile = document.getElementById("text-option-mobile")
-let codeOptionMobile = document.getElementById("code-option-mobile")
-let inputField = document.getElementById("input-trigger")
-let refreshBtn = document.getElementById("refresh")
-let refreshBtnMobile = document.getElementById("refresh-mobile")
+let codeOption = document.getElementById("code-option");
+let textOption = document.getElementById("text-option");
+let textOptionMobile = document.getElementById("text-option-mobile");
+let codeOptionMobile = document.getElementById("code-option-mobile");
+let inputField = document.getElementById("input-trigger");
+let refreshBtn = document.getElementById("refresh");
+let refreshBtnMobile = document.getElementById("refresh-mobile");
 
 
 // refactor later
-textOption.addEventListener("click", function() {
-    inputField.focus()
-    typeText(text)
-    textPicked = true
-    click = true
+textOption.addEventListener("click", function () {
+    inputField.focus();
+    typeText(text);
+    textPicked = true;
+    click = true;
 })
-codeOption.addEventListener("click", function() {
-    typeText(code)
-    inputField.focus()
-    click = true
-    changeTimer("none", "inline-block")
-    codePicked = true
+codeOption.addEventListener("click", function () {
+    typeText(code);
+    inputField.focus();
+    click = true;
+    changeTimer("none", "inline-block");
+    codePicked = true;
 })
-textOptionMobile.addEventListener("click", function() {
-    inputField.focus()
-    typeText(text)
-    click = true
-    textPicked = true
+textOptionMobile.addEventListener("click", function () {
+    inputField.focus();
+    typeText(text);
+    click = true;
+    textPicked = true;
 })
-codeOptionMobile.addEventListener("click", function() {
-    inputField.focus()
-    typeText(code)
-    click = true
-    changeTimer("none", "inline-block")
-    codePicked = true
+codeOptionMobile.addEventListener("click", function () {
+    inputField.focus();
+    typeText(code);
+    click = true;
+    changeTimer("none", "inline-block");
+    codePicked = true;
 })
-refreshBtn.addEventListener("click", function() {
-    refresh("inline-block", "none")
+refreshBtn.addEventListener("click", function () {
+    refresh("inline-block", "none");
 })
-refreshBtnMobile.addEventListener("click", function() {
-    refresh("none", "block")
+refreshBtnMobile.addEventListener("click", function () {
+    refresh("none", "block");
 })
 
 /**
  * Listens for keys after user selects code or text option.
  * Calls appropriate functions for program to run.
  */
-    document.addEventListener("keydown", function(event) {
-        if (event.key === event.key && click === true) {
-            if (event.key === event.key && typedLetters < 1 && event.key !== "Shift") {
-                startTime = new Date();
-                if (codePicked) {
-                    start();
-                }
-            } if (event.key === "Shift") {
-                // do nothing
-            } else if (symbols.includes(event.key)) {
+document.addEventListener("keydown", function (event) {
+    if (event.key === event.key && click === true) {
+        if (event.key === event.key && typedLetters < 1 && event.key !== "Shift") {
+            startTime = new Date();
+            if (codePicked) {
+                start();
+            }
+        }
+        if (event.key === "Shift") {
+            // do nothing
+        } else if (symbols.includes(event.key)) {
+            typedLetters.push(event.key);
+            compareText();
+            if (textPicked) {
+                calculateWPM();
+            }
+        } else if (event.key === "Backspace") {
+            if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
+                correct -= 1;
+                typedLetters.pop();
+                resetLetter();
+            } else {
+                typedLetters.pop();
+                resetLetter();
+            }
+        } else {
+            try {
+                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
                 typedLetters.push(event.key);
                 compareText();
-                if (textPicked) {
-                calculateWPM();
-                }
-            } else if (event.key === "Backspace") {
-                if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
-                    correct -= 1;
-                    typedLetters.pop();
-                    resetLetter();
-                }
-                else {
-                    typedLetters.pop();
-                    resetLetter();
-                }
-            } else {
-                try {
-                    document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "inset 0px 0px 0px 6px rgb(233 233 233)";
-                    typedLetters.push(event.key);
-                    compareText();
-                }
-                catch(err) {
-                    // do nothing
-                }
+            } catch (err) {
+                // do nothing
             }
         }
-    })
-    document.addEventListener("keyup", function(event) {
-        if (event.key === event.key) {
-            if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key)) {
-                try {
-                    document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
-                }
-                catch(err) {
-                    // do nothing
-                }
+    }
+})
+document.addEventListener("keyup", function (event) {
+    if (event.key === event.key) {
+        if (event.key !== "Shift" && event.key !== " " && event.key !== "Backspace" && !symbols.includes(event.key)) {
+            try {
+                document.getElementById((event.key).toLowerCase() + '-key').style.boxShadow = "rgb(2 166 255) 0px 0px 8px 0px";
+            } catch (err) {
+                // do nothing
             }
         }
-    })
+    }
+})
 
 
 let startTime;
@@ -104,32 +102,32 @@ let startTime;
  * was typed correctly or not.
  */
 function compareText() {
-        if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
-            let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
-            letterCorrect.className = "right"
-            correct += 1
-            percentage = calculateAccuracy()
-            document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
-            if (typedLetters.length === code.length) {
-                pause();
-            } 
-        } else {
-            let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
-            letterWrong.className = "wrong";
-            errors += 1
-            document.getElementById("error-count").innerHTML = errors
-            percentage = calculateAccuracy()
-            document.getElementById("accuracy-percentage").innerHTML = percentage + "%"
-            if (typedLetters.length === code.length) {
-                pause();
-            } 
-        } 
+    if (typedLetters[typedLetters.length - 1] === checkText[typedLetters.length - 1]) {
+        let letterCorrect = document.getElementById("text").children[typedLetters.length - 1];
+        letterCorrect.className = "right";
+        correct += 1;
+        percentage = calculateAccuracy();
+        document.getElementById("accuracy-percentage").innerHTML = percentage + "%";
+        if (typedLetters.length === code.length) {
+            pause();
+        }
+    } else {
+        let letterWrong = document.getElementById("text").children[typedLetters.length - 1];
+        letterWrong.className = "wrong";
+        errors += 1;
+        document.getElementById("error-count").innerHTML = errors;
+        percentage = calculateAccuracy();
+        document.getElementById("accuracy-percentage").innerHTML = percentage + "%";
+        if (typedLetters.length === code.length) {
+            pause();
+        }
+    }
 }
 
 function changeTimer(val1, val2) {
-    document.getElementById("wpm").style.display = val1
-    document.getElementById("wpm-count").style.display = val1
-    document.getElementById("time").style.display = val2
+    document.getElementById("wpm").style.display = val1;
+    document.getElementById("wpm-count").style.display = val1;
+    document.getElementById("time").style.display = val2;
 }
 
 
@@ -148,7 +146,9 @@ function timer() {
 
 function start() {
     pause();
-    cron = setInterval(() => { timer(); }, 10);
+    cron = setInterval(() => {
+        timer();
+    }, 10);
 }
 
 function pause() {
@@ -162,22 +162,22 @@ function reset() {
 }
 
 function refresh(displayValue, displayValueMobile) {
-    let text = document.getElementById("text")
-    let newValue = displayValue
-    let newValueMobile = displayValueMobile
+    let text = document.getElementById("text");
+    let newValue = displayValue;
+    let newValueMobile = displayValueMobile;
     deleteThings(text, newValue, newValueMobile);
     document.getElementById("text").innerHTML = "Select an option: Text or Code?";
     reset();
     pause();
     typedLetters = [];
     if (codePicked) {
-        changeTimer("inline-block", "none")
-        document.getElementById("accuracy-percentage").innerHTML = ""
-        document.getElementById("error-count").innerHTML = 0
+        changeTimer("inline-block", "none");
+        document.getElementById("accuracy-percentage").innerHTML = "";
+        document.getElementById("error-count").innerHTML = 0;
     } else {
         document.getElementById("wpm-count").innerHTML = 0;
-        document.getElementById("accuracy-percentage").innerHTML = ""
-        document.getElementById("error-count").innerHTML = 0
+        document.getElementById("accuracy-percentage").innerHTML = "";
+        document.getElementById("error-count").innerHTML = 0;
     }
     codePicked = false;
     textPicked = false;
@@ -201,23 +201,23 @@ function calculateWPM(time) {
         }
     }
     // code inspired from: https://ralzohairi.medium.com/displaying-dynamic-elapsed-time-in-javascript-260fa0e95049
-    let endTime = new Date()
+    let endTime = new Date();
     let timeDiff = (endTime.getTime() - startTime.getTime()) / 1000;
     wpm = Math.floor(60 / timeDiff * count[" "]);
-    document.getElementById("wpm-count").innerHTML = wpm
+    document.getElementById("wpm-count").innerHTML = wpm;
 }
 
 function calculateAccuracy() {
-    accuracy = 100 - (errors / correct) * 100 
-    return accuracy.toFixed(1)
+    accuracy = 100 - (errors / correct) * 100;
+    return accuracy.toFixed(1);
 }
 
 /**
  * Reverts color of letter back to black after backspace is hit.
- */ 
+ */
 function resetLetter() {
-            let letter = document.getElementById("text").children[typedLetters.length];
-            letter.className = "";
+    let letter = document.getElementById("text").children[typedLetters.length];
+    letter.className = "";
 }
 
 /**
@@ -226,15 +226,15 @@ function resetLetter() {
  */
 function typeText(textOrCode) {
     let oldText = document.getElementById("text");
-    let displayValue = "none"
-    let displayValueMobile = "none"
+    let displayValue = "none";
+    let displayValueMobile = "none";
     deleteThings(oldText, displayValue, displayValueMobile);
-    let newText = ""
+    let newText = "";
     for (let letter in textOrCode) {
         newText += `<span>${textOrCode[letter]}</span>`;
     }
     oldText.innerHTML = newText;
-    checkText = textOrCode
+    checkText = textOrCode;
 }
 
 /**
@@ -253,32 +253,32 @@ function deleteThings(text, displayVal, displayValMobile) {
  * Make navbar disappear and appear on scroll.
  */
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+window.onscroll = function () {
     // code taken from https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("title").style.top = "0";
-  } else {
-    document.getElementById("title").style.top = "-120px";
-  }
-  prevScrollpos = currentScrollPos;
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        document.getElementById("title").style.top = "0";
+    } else {
+        document.getElementById("title").style.top = "-120px";
+    }
+    prevScrollpos = currentScrollPos;
 }
 
-let click = false
-let codePicked = false
-let textPicked = false
+let click = false;
+let codePicked = false;
+let textPicked = false;
 let correct = 0;
 let errors = 0;
 let typedLetters = [];
-let  symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"]
+let symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"];
 let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
-let code = `<script>console.log('Hello, World!')</script>`
-let checkText = ""
+let code = `<script>console.log('Hello, World!')</script>`;
+let checkText = "";
 
 // nocode:
-    // `Make spacebar red as well if not hit (probably with background color.)
+// `Make spacebar red as well if not hit (probably with background color.)
 
-    // When restart button is hit, text disappears and typedLetters list is reset.
+// When restart button is hit, text disappears and typedLetters list is reset.
 
-    // Refactor code to use datatypes (makes multiple event listeners unnescasarry)
-    // `
+// Refactor code to use datatypes (makes multiple event listeners unnescasarry)
+// `
