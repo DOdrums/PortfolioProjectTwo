@@ -117,7 +117,7 @@ function compareText() {
         letterWrong.className = "wrong";
         errors += 1;
         document.getElementById("error-count").innerHTML = errors;
-        percentage = calculateAccuracy();
+        let percentage = calculateAccuracy();
         document.getElementById("accuracy-percentage").innerHTML = percentage + "%";
         if (typedLetters.length === code.length) {
             pause();
@@ -245,7 +245,7 @@ function typeText(textOrCode) {
     let displayValueMobile = "none";
     deleteThings(oldText, displayValue, displayValueMobile);
     let newText = "";
-    for (let letter in textOrCode) {
+    for (let letter = 0; letter < textOrCode.length; letter++) {
         newText += `<span>${textOrCode[letter]}</span>`;
     }
     oldText.innerHTML = newText;
