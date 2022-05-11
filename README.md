@@ -4,6 +4,19 @@
 
 This project is built as part of the Code Institute Full Stack Software Development course. For this course, Dirk Ornee had to built a second Portfolio Project. Inspired by his recent purchase of a ZSA Moonlander keyboard, he decided to build an app that would help new users get familiar with their Moonlander.
 
+## UX
+
+### Structure of the website
+
+The website is designed to have a good hierarchical flow. After seeing the big headed, which immediately makes clear this website is a typing tutor, the user's attention will fall on the sticky notes. These explain the purpose of the website and how to use it. The user will scroll down and start using the tutor. The refresh button is conveniently placed to allow for multiple runs. The site is fully responsive and can be used on any device with a physical or virtual keyboard.
+
+### Color Scheme
+
+### Features
+
+### Futures Features
+
+There is one main feature that could be added in the future, which is the option to let users enter their own string of text to type along with. This would become a submenu of the 'Text' button, which will now show a 'Standard Text' and 'Custom Text' option after being clicked. After clicking 'Custom Text' the user should be able to input their own text.
 ## Credits
 
 ### Code
@@ -17,6 +30,8 @@ This project is built as part of the Code Institute Full Stack Software Developm
 * [Hide Navbar on Scroll Down](https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp) to make the title bar disappear and appear on scroll.
 
 ### Images
+  
+  [Moonlander logo](https://www.zsa.io/moonlander/) - taken from the ZSA website.
 
 ## Technologies used
 
