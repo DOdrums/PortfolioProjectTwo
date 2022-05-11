@@ -7,7 +7,7 @@ let refreshBtn = document.getElementById("refresh");
 let refreshBtnMobile = document.getElementById("refresh-mobile");
 
 
-// refactor later
+// listens for clicks on Text or Code buttons
 textOption.addEventListener("click", function () {
     inputField.focus();
     typeText(text);
@@ -34,6 +34,7 @@ codeOptionMobile.addEventListener("click", function () {
     changeTimer("none", "inline-block");
     codePicked = true;
 })
+// listens for click on refresh button
 refreshBtn.addEventListener("click", function () {
     refresh("inline-block", "none");
 })
@@ -124,6 +125,10 @@ function compareText() {
     }
 }
 
+/**
+ * Function to change from WPM to timer function in
+ * the typing tutor.
+ */
 function changeTimer(val1, val2) {
     document.getElementById("wpm").style.display = val1;
     document.getElementById("wpm-count").style.display = val1;
@@ -136,6 +141,9 @@ let millisecond = 0;
 let second = 0;
 let cron;
 
+/**
+ * A timer that can be used with the start, pause and reset funtions.
+ */
 function timer() {
     if ((millisecond += 10) == 1000) {
         millisecond = 0;
@@ -161,6 +169,10 @@ function reset() {
     document.getElementById("time-count").innerText = "0";
 }
 
+/**
+ * Reset the typingtutor to it's initial state,
+ * where user can pick text or code.
+ */
 function refresh(displayValue, displayValueMobile) {
     let text = document.getElementById("text");
     let newValue = displayValue;
@@ -207,6 +219,9 @@ function calculateWPM(time) {
     document.getElementById("wpm-count").innerHTML = wpm;
 }
 
+/**
+ * Calculates accuracy from correct and incorrectly typed letters
+ */
 function calculateAccuracy() {
     accuracy = 100 - (errors / correct) * 100;
     return accuracy.toFixed(1);
@@ -274,11 +289,3 @@ let symbols = [" ", "<", ">", ":", "?", "'", "[", "]", "(", ")", "{", "}", "!"];
 let text = "When typing, it's important to keep looking at the screen, so you spot any errors before they happen! This is where touch typing comes in handy! So try to type all of this text without ever looking down at your keyboard."
 let code = `<script>console.log('Hello, World!')</script>`;
 let checkText = "";
-
-// nocode:
-// `Make spacebar red as well if not hit (probably with background color.)
-
-// When restart button is hit, text disappears and typedLetters list is reset.
-
-// Refactor code to use datatypes (makes multiple event listeners unnescasarry)
-// `
