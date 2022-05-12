@@ -2,6 +2,8 @@
 
 ## Portfolio Project 2: Javascript Essentials
 
+![Multi screen mockup](assets/images/multi-mockup.png)
+
 This project is built as part of the Code Institute Full Stack Software Development course. For this course, Dirk Ornee had to built a second Portfolio Project. Inspired by his recent purchase of a ZSA Moonlander keyboard, he decided to build an app that would help new users get familiar with their Moonlander.
 
 ## Live Site
