@@ -15,6 +15,7 @@ element:focus {
 	border-color: transparent; 
 }
 
+/* styling for header */
 #title {
     text-align: center;
     background-color: #525050;
