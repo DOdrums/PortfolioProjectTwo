@@ -28,7 +28,7 @@ The target audience for this project is anybody who loves to learn touch typing 
 
 #### As the owner
 
-* I want to build a helpful tool for people how buy the Moonlander.
+* I want to build a helpful tool for people who just bought or already owned the Moonlander.
 * I want the user to improve their typing and have data to back that up.
 * I want the user to be challenged and have fun.
 * I want the user to keep trying and playing with the tutor.
@@ -45,17 +45,17 @@ The target audience for this project is anybody who loves to learn touch typing 
 
 #### As a returning user
 
-* I want to be able to challenge myself again
-* I want to be able to improve on my previous scores
+* I want to be able to challenge myself again.
+* I want to be able to improve on my previous scores.
 * I want to train my usage of the Moonlander keyboard.
 
 ### Structure of the website
 
-The website is designed to have a good hierarchical flow. After seeing the big headed, which immediately makes clear this website is a typing tutor, the user's attention will fall on the sticky notes. These explain the purpose of the website and how to use it. The user will scroll down and start using the tutor. The refresh button is conveniently placed to allow for multiple runs. The site is fully responsive and can be used on any device with a physical or virtual keyboard.
+The website is designed to have a good hierarchical flow. After seeing the big header, which immediately makes clear this website is a typing tutor, the user's attention will fall on the sticky notes. These explain the purpose of the website and how to use it. The user will scroll down and start using the tutor. The refresh button is conveniently placed to allow for multiple runs. The site is fully responsive and can be used on any device with a physical or virtual keyboard.
 
 ### Color Scheme
 
-The color scheme of this project was not auto generated. Instead I found matching colors on my own, and made a color palette to see them side by side:
+The color scheme of this project was not auto generated. Instead, matching colors were selected by the author, and a color palette was made to display them side by side:
 
 ![Color Palettte](assets/images/color-palette.png)
 
@@ -65,7 +65,7 @@ The project is a one page website, making it a fairly simple page in terms of UI
 
 #### Header
 
-You will be greeted by a header, which shows a nice logo and the title of the website. The website disappears on scroll down and re-appears on scroll up:
+You will be greeted by a header, which shows a nice logo and the title of the website. The header disappears on scroll down and re-appears on scroll up:
 
 ![Header](assets/images/header.png)
 
@@ -97,10 +97,10 @@ After clicking the 'Text' button, user will see text appear and will now be able
 
 Let's have a look all the data that is in the bottom of the tutor. From right to left:
 
-* 'errors' counts the amount of errors you made while typing. If you hit backspace you can retype a letter, this is implemented to make the typing experience more realistic. However, hitting backspace after incorrectly typing a letter, won't affect the 'errors' value. So, if you want to have 0 errors in your typing test, you should really make 0 errors!
-* Next comes the 'acrcy' value, which is an abbreviation of accuracy. This value is calculated with the value from 'errors' and simply show your accuracy in typing in a percentage value (100% would be 0 errors)
-* Next is the WPM value, which stands for words per minute. This value is pretty self explanatory, it calculates how fast you type and displays this in a words per minute value.
-* The last little feature is a refresh button. This will return to the start of the typing tutor, where user gets to pick text or code. Furthermore, all values will be reset back to zero.
+* 'errors' counts the amount of errors you made while typing. If you hit backspace you can retype a letter, this is implemented to make the typing experience more realistic. However, hitting backspace after incorrectly typing a letter, won't affect the 'errors' value. So, if you want to have 0 errors on your typing test, you should really make 0 errors!
+* Next comes the 'acrcy' value, which is an abbreviation of 'accuracy'. This value is calculated with the value from 'errors' and simply shows your accuracy in typing in a percentage value (100% would be 0 errors)
+* Next is the WPM value, which stands for 'words per minute'. This value is pretty self explanatory, it calculates how fast you type and displays this in a words per minute value.
+* The last little feature is a refresh button. This will return user to the start of the typing tutor, where user gets to pick text or code. Furthermore, all values will be reset back to zero.
 
 #### Code Option
 
@@ -112,7 +112,7 @@ Besides having code to type, there is another difference. Since using a words pe
 
 #### Keyboard
 
-Below the tutor, the user can see an animated keyboard. This keyboard resembles the Moonlander keyboard by ZSA and is meant to help the user see which key they are typing, which can be helpful when typing errors happen. The key press is signaled by the key getting a grey box shadow after being pressed.
+Below the tutor, the user can see an animated keyboard. This keyboard resembles the Moonlander keyboard by ZSA and is meant to help the user see which key they are typing, which can be helpful when typing errors happen. The key press is signaled by the key getting a grey inverted box shadow after being pressed (look at the 'E' key).
 
 ![Keyboard](assets/images/keyboard.png)
 
@@ -130,7 +130,7 @@ The interface looks the same on mobile, except for the virtual Moonlander keyboa
 
 ### Futures Features
 
-There is one main feature that could be added in the future, which is the option to let users enter their own string of text to type along with. This would become a submenu of the 'Text' button, which will now show a 'Standard Text' and 'Custom Text' option after being clicked. After clicking 'Custom Text' the user should be able to input their own text.
+There is one main feature that could be added in the future, which is the option to let users enter their own string of text to type along with. This would become a submenu of the 'Text' button, which will now show a 'Standard Text' and 'Custom Text' option after being clicked. After clicking 'Custom Text' the user should be able to input their own text. Besides this, hitting the code or text button could cycle multiple strings of text, instead of using the same text for every run.
 
 ## Credits
 
@@ -140,7 +140,7 @@ There is one main feature that could be added in the future, which is the option
   * [Bobby Hadz Blog](https://bobbyhadz.com/blog/javascript-count-occurrences-of-each-element-in-array) for extracting the amount of words typed by the user.
   * [Reema Alzohairi Blog](https://ralzohairi.medium.com/displaying-dynamic-elapsed-time-in-javascript-260fa0e95049) for calculating the time elapsed.
 * To prevent a zoom in on smartphones after the input field is focused, ```user-scalable=no, user-scalable=0``` was used. This solution was found on [Stackoverflow (answer by rebpp)](https://stackoverflow.com/a/11882296/16545052).
-* [Stackoverflow (answer by Kristjian)](https://stackoverflow.com/a/13625843/16545052) to make the keyboard size responively.
+* [Stackoverflow (answer by Kristjian)](https://stackoverflow.com/a/13625843/16545052) to make the keyboard size responsive.
 * [Creating a timer with JavaScript](https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7) to built a timer for the coding option of the tying tutor.
 * [Hide Navbar on Scroll Down](https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp) to make the title bar disappear and appear on scroll.
 
@@ -164,6 +164,8 @@ There is one main feature that could be added in the future, which is the option
 
 [Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php) - to create an image of the website shown on different devices.
 
+[Coolors](https://coolors.co/2e6a8a-525050-fffacd-02a6ff-d8f1f2) - for creating a color palette.
+
 ## Testing
 
 ### Performance testing
@@ -172,7 +174,7 @@ The lighthouse tool in Chrome Developer Tools was used to test certain key facto
 
 ![Lighthouse](assets/images/lighthouse.png)
 
-As you can see, the scores are good, but the Accessibility score could be higher. This is caused by the ```user-scalable=no, user-scalable=0``` in the head element, that is there to prevent unwanted zooming behavior in the tutor when used on smartphones. Unfortunately it's not something that can be removed, so this is the highest the score will get (this is the only error).
+As you can see, the scores are good, but the Accessibility score could be higher. This is caused by the ```user-scalable=no, user-scalable=0``` in the head element, that is there to prevent unwanted zooming behavior in the tutor when used on smartphones. Unfortunately it's not something that can be removed, so this is the highest the score will get (as this is the only error).
 
 ### Compatibility testing
 
@@ -184,7 +186,7 @@ This is a browser specific issue that could not be resolved at this time.
 
 ### User Stories testing
 
-* I want to build a helpful tool for people how buy the Moonlander.
+* I want to build a helpful tool for people who just bought or already owned the Moonlander.
   * The tutor is a good test for typing ability with a visual aid specifically designed for the Moonlander.
 * I want the user to improve their typing and have data to back that up.
   * Data points are given to the user to see how fast and accurate they type and they can improve on this in consecutive runs.
@@ -213,7 +215,7 @@ This is a browser specific issue that could not be resolved at this time.
 #### As a returning user
 
 * I want to be able to challenge myself again.
-  * User can easily return to the tutor a second time, since user can do unlimited runs of the tutor. They can than set new goals, for example maintaining their accuracy above 95% throughout.
+  * User can easily return to the tutor a second time, since user can do unlimited runs of the tutor. They can then set new goals, for example maintaining their accuracy above 95% throughout.
 * I want to be able to improve on my previous scores.
   * User can keep on trying to improve their previous scores when returning to the tutor a second time.
 * I want to train my usage of the Moonlander keyboard.
@@ -244,7 +246,7 @@ To validate the JavasScript JShint was used. Besides throwing about a 100 missin
 ### Bugs
 
 * The error 'Uncaught TypeError' would frequently pop up when typing text in the textbox, this was due to the Shift key not being able to be accessed in the DOM (no ID written for any Shift key). Furthermore, any capital letters were also not recognized in the DOM, again because there are not ID's for them. These issues were fixed by writing an extra for loop, eliminating event.key matches for any Shift keys and using the toLowerCase method to make any uppercase letters lowercase before accessing the DOM.
-* When scrolling down, the header would disappear behind the textbox. To fix this, the textbox was given a z-index of -1. This however, broke the buttons, since they now weren't clickable anymore. I took a while to find the issue, but eventually it was fixed by removing the z-index from the text box and instead give the header a z-index of 1.
+* When scrolling down, the header would disappear behind the textbox. To fix this, the textbox was given a z-index of -1. This however, broke the buttons, since they now weren't clickable anymore. It took a while to find the issue, but eventually it was fixed by removing the z-index from the text box and instead give the header a z-index of 1.
 
 ### Deployment
 
@@ -265,4 +267,4 @@ To the deploy the project, I had to:
 
 ## Acknowledgements
 
-This website was built as part of the Full Stack Software Development course from Code Institute. I would like to thank my mentor Adeye Adegbenga, for his excellent feedback and guidance throughout the development of the project. I would also like to thank friends and family, who all took a look at the finished project to make sure it worked well and if I could improve things. Lastly, a special thanks to Riyadh Khan, who gave me excellent feedback in the peer-code-review channel on slack.
+This website was built as part of the Full Stack Software Development course from Code Institute. I would like to thank my mentor Adeye Adegbenga, for his excellent feedback and guidance throughout the development of the project. I would also like to thank friends and family, who all took a look at the finished project to make sure it worked well and if I could improve things.
