@@ -95,6 +95,7 @@ There is one main feature that could be added in the future, which is the option
 ### Performance testing
 
 The lighthouse tool in Chrome Developer Tools was used to test certain key factors of the website. This was a big help in spotting errors and keeping up with best practices in development. Scores can be seen in the image below:
+
 ![Lighthouse](assets/images/lighthouse.png)
 
 As you can see, the scores are good, but the Accessibility score could be higher. This is caused by the ```user-scalable=no, user-scalable=0``` in the head element, that is there to prevent unwanted zooming behavior in the tutor when used on smartphones. Unfortunately it's not something that can be removed, so this is the highest the score will get (this is the only error).
@@ -102,10 +103,47 @@ As you can see, the scores are good, but the Accessibility score could be higher
 ### Compatibility testing
 
 The site was tested by myself on an iPhone 11 pro and a 15 inch Macbook Pro. Friends and family also tested the website on Windows Desktops, the original (small) iPhone SE, and Android devices. The website was also tested in Chrome, Firefox and Safari. One issue was found: the Safari browser doesn't underline spaces in the tutor:
+
 ![underline](assets/images/underline-issue.png)
+
 This is a browser specific issue that could not be resolved at this time.
 
 ### User Stories testing
+
+* I want to build a helpful tool for people how buy the Moonlander.
+  * The tutor is a good test for typing ability with a visual aid specifically designed for the Moonlander.
+* I want the user to improve their typing and have data to back that up.
+  * Data points are given to the user to see how fast and accurate they type and they can improve on this in consecutive runs.
+* I want the user to be challenged and have fun.
+  * User can challenge themselves in multiple ways by setting goals with the data points.
+* I want the user to keep trying and playing with the tutor.
+  * Refresh button encourages switching between modes and doing consecutive runs.
+* I want the user to get a good sense of where each letter is on their Moonlander keyboard.
+  * The visual aid helps the user to identify which key they just typed.
+
+#### As a new user
+
+* I want to easily navigate the website.
+  * The website's layout is very simple with a top section and tutor section. The user does not need to navigate the page much or look for features, it's all right there.
+* I want to quickly understand the goal of the website.
+  * The goal is explained in the first sticky note: 'What is it'.
+* I want to train my typing and have data to see if I am improving.
+  * The typing tutor gives multiple data points for the user to improve their typing: errors, accuracy and WPM or time.
+* I want to be able to switch between different modes quickly.
+  * The refresh button gives the user the ability to easily switch between Text and Code mode.
+* I want to be able to challenge myself.
+  * User gets multiple data points to try and improve their typing abilities in consecutive runs.
+* I want to use this tutor to start typing on my Moonlander.
+  * Because of the visual on-screen keyboard on the desktop version of this website, the user gets a little help when fist starting out with their Moonlander.
+
+#### As a returning user
+
+* I want to be able to challenge myself again.
+  * User can easily return to the tutor a second time, since user can do unlimited runs of the tutor. They can than set new goals, for example maintaining their accuracy above 95% throughout.
+* I want to be able to improve on my previous scores.
+  * User can keep on trying to improve their previous scores when returning to the tutor a second time.
+* I want to train my usage of the Moonlander keyboard.
+  * The visual aid and code option helps with getting better at using the Moonlander, since it's a keyboard mostly used by developers.
 
 ### Code validation
 
@@ -133,7 +171,13 @@ To validate the JavasScript JShint was used. Besides throwing about a 100 missin
 
 ### Deployment
 
-The site was deployed through Github Pages. Connected to Github was Gitpod, which features a browser based VScode. For the most part I used the connection to Gitpod with a desktop VScode, since I have VIM and other extensions installed, which didn't work in the browser based version.
+To test the site locally during development, a local host was run in the following way:
+
+* Open terminal within VScode
+* enter: ```python3 -m http.server```
+* Click "Open in the browser" on the pop-up that appears or enter http://localhost:8000/ in your browser.
+
+To deploy the site live, Github Pages was used. Connected to Github was Gitpod, which features a browser based VScode. For the most part, the connection to Gitpod was made with a desktop VScode, since VIM was used and other extensions as well, which didn't work in the browser based version.
 
 To the deploy the project, I had to:
 
@@ -141,12 +185,6 @@ To the deploy the project, I had to:
 * Scroll down to Pages
 * Select the main branch
 * Hit save to deploy the website
-
-To test the website locally while building:
-
-* Open terminal in the open VScode project
-* Start http server by typing 'python3 -m http.server' into the terminal window
-* Click the 'Open Browser' button that appears
 
 ## Acknowledgements
 
