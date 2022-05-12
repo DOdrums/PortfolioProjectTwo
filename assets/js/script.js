@@ -1,3 +1,4 @@
+// put all elements that need click listeners in a variable
 let codeOption = document.getElementById("code-option");
 let textOption = document.getElementById("text-option");
 let textOptionMobile = document.getElementById("text-option-mobile");
@@ -5,7 +6,6 @@ let codeOptionMobile = document.getElementById("code-option-mobile");
 let inputField = document.getElementById("input-trigger");
 let refreshBtn = document.getElementById("refresh");
 let refreshBtnMobile = document.getElementById("refresh-mobile");
-
 
 // listens for clicks on Text or Code buttons
 textOption.addEventListener("click", function () {
@@ -41,6 +41,10 @@ refreshBtn.addEventListener("click", function () {
 refreshBtnMobile.addEventListener("click", function () {
     refresh("none", "block");
 });
+
+
+// variable to store new date, used in listener below and WPM function 
+let startTime;
 
 /**
  * Listens for keys after user selects code or text option.
@@ -94,9 +98,6 @@ document.addEventListener("keyup", function (event) {
     }
 });
 
-
-let startTime;
-
 /**
  * Compares text typed by user to text that needs to be typed.
  * Letters are colored red or green depending on if the letter
@@ -135,14 +136,14 @@ function changeTimer(val1, val2) {
     document.getElementById("time").style.display = val2;
 }
 
-
+// variables needed for timer
 // all timer code taken from: https://dev.to/walternascimentobarroso/creating-a-timer-with-javascript-8b7
 let millisecond = 0;
 let second = 0;
 let cron;
 
 /**
- * A timer that can be used with the start, pause and reset funtions.
+ * A timer that can be used with the start, pause and reset funtions below.
  */
 function timer() {
     if ((millisecond += 10) == 1000) {
@@ -279,6 +280,7 @@ window.onscroll = function () {
     prevScrollpos = currentScrollPos;
 };
 
+// variables necessary for multiple function to work
 let click = false;
 let codePicked = false;
 let textPicked = false;
