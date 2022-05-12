@@ -130,21 +130,27 @@ element:focus {
 }
 
 #text-option {
+    color: white;
     width: 30%;
     height: 30%;
     float: left;
     margin: 4px 0 0 14%;
 
-    background-color: lightgrey;
+    background-color: #2e6a8a;
 }
 
 #code-option {
+    color: white;
     width: 30%;
     height: 30%;
     float: right;
     margin: 4px 14% 0 0;
 
-    background-color: lightgrey;
+    background-color: #2e6a8a;
+}
+
+#code-option:hover, #text-option:hover {
+    background-color: #01334e;
 }
 
 #typing-data {
@@ -207,10 +213,6 @@ element:focus {
     bottom: 0;
     right: -24px;
     color: red;
-}
-
-#code-option:hover, #text-option:hover {
-    background-color: grey;
 }
 
 #cover {
@@ -421,7 +423,7 @@ element:focus {
         width: 67%;
         height: 53px;
         margin: 53px auto 0 auto;
-        background-color: grey;
+        background-color: #2e6a8a;
     }
     
     #code-option-mobile {
@@ -430,7 +432,7 @@ element:focus {
         width: 67%;
         height: 53px;
         margin: 53px auto 57px auto;
-        background-color: grey;
+        background-color: #2e6a8a;
     }
 
     #code-option-mobile p, #text-option-mobile p {

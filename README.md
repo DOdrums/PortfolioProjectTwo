@@ -152,16 +152,19 @@ To validate the code, multiple validators were used:
 [Nu Html Checker](https://validator.w3.org/nu/)
 
 Which returned only 1 warning, which again is the ```user-scalable=no, user-scalable=0``` code used in the head. No errors were thrown:
+
 ![HTML validator](assets/images/html-validator.png)
 
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 
 Which returned zero errors:
+
 ![CSS validator](assets/images/css-validator.png)
 
 [JShint](https://jshint.com/)
 
 To validate the JavasScript JShint was used. Besides throwing about a 100 missing semi-colon errors, there were also some undefined variables. After fixing this, JShint comes up completely clean:
+
 ![JShint](assets/images/js-validator.png)
 
 ### Bugs
