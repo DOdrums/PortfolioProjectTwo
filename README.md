@@ -55,11 +55,83 @@ The website is designed to have a good hierarchical flow. After seeing the big h
 
 ### Color Scheme
 
+The color scheme of this project was not auto generated. Instead I found matching colors on my own, and made a color palette to see them side by side:
+
+![Color Palettte](assets/images/color-palette.png)
+
 ### Features
+
+The project is a one page website, making it a fairly simple page in terms of UI. The following features are present from top to bottom:
+
+#### Header
+
+You will be greeted by a header, which shows a nice logo and the title of the website. The website disappears on scroll down and re-appears on scroll up:
+
+![Header](assets/images/header.png)
+
+#### Sticky Notes
+
+After the header come two sticky notes, one explaining what the site is about and one explaining how to use the tutor:
+
+![Sticky What is it?](assets/images/what-is-it.png)
+
+![Sticky How doest it work?](assets/images/how-does-it-work.png)
+
+#### Tutor
+
+After reading the sticky notes, the user should be ready to dive into the actual tutor. User is greeted by the complete interface with on top the question: "Select an option: Text or Code?". This should urge the user to click one of the buttons below:
+
+![tutor](assets/images/typing-tutor.png)
+
+#### Button
+
+Each button will show a slightly darker color when hovered, reassuring the user this as a clickable element:
+
+![Button](assets/images/text-hover.png)
+
+#### Text option
+
+After clicking the 'Text' button, user will see text appear and will now be able to type. Once user starts typing, the text will appear green if typed correctly and red if typed incorrectly:
+
+![Text option of tutor](assets/images/text-option.png)
+
+Let's have a look all the data that is in the bottom of the tutor. From right to left:
+
+* 'errors' counts the amount of errors you made while typing. If you hit backspace you can retype a letter, this is implemented to make the typing experience more realistic. However, hitting backspace after incorrectly typing a letter, won't affect the 'errors' value. So, if you want to have 0 errors in your typing test, you should really make 0 errors!
+* Next comes the 'acrcy' value, which is an abbreviation of accuracy. This value is calculated with the value from 'errors' and simply show your accuracy in typing in a percentage value (100% would be 0 errors)
+* Next is the WPM value, which stands for words per minute. This value is pretty self explanatory, it calculates how fast you type and displays this in a words per minute value.
+* The last little feature is a refresh button. This will return to the start of the typing tutor, where user gets to pick text or code. Furthermore, all values will be reset back to zero.
+
+#### Code Option
+
+So, the user has just hit the refresh button and is now ready to try the code option! This will bring the user to a similar interface, but instead, they get to type code:
+
+![Code option](assets/images/code-option.png)
+
+Besides having code to type, there is another difference. Since using a words per minute value when typing code doesn't make a whole lot of sense, the code option displays a timer instead. This timer starts counting up from zero after typing the first key and will stop when you finish the text. This way, the user can challenge themselves to type the piece of code faster next time.
+
+#### Keyboard
+
+Below the tutor, the user can see an animated keyboard. This keyboard resembles the Moonlander keyboard by ZSA and is meant to help the user see which key they are typing, which can be helpful when typing errors happen. The key press is signaled by the key getting a grey box shadow after being pressed.
+
+![Keyboard](assets/images/keyboard.png)
+
+#### Mobile Buttons
+
+On smartphones, the interface is mostly the same, except that the buttons are now underneath the tutor instead of inside the tutor.
+
+![Mobile buttons](assets/images/buttons-mobile.jpg)
+
+#### Mobile interface
+
+The interface looks the same on mobile, except for the virtual Moonlander keyboard, which has now disappeared to make place for the smartphones own keyboard:
+
+![Mobile interface](assets/images/typing-mobile.jpg)
 
 ### Futures Features
 
 There is one main feature that could be added in the future, which is the option to let users enter their own string of text to type along with. This would become a submenu of the 'Text' button, which will now show a 'Standard Text' and 'Custom Text' option after being clicked. After clicking 'Custom Text' the user should be able to input their own text.
+
 ## Credits
 
 ### Code
